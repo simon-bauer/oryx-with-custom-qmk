@@ -128,8 +128,8 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo7, TO(6)),
     COMBO(combo8, KC_ENTER),
     COMBO(combo9, ST_MACRO_13),
-    COMBO(combo10, TO(1)),
-    COMBO(combo11, TO(1)),
+    COMBO(combo10, TO(0)),
+    COMBO(combo11, TO(0)),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
