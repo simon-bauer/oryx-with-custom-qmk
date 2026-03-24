@@ -24,27 +24,27 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(6, KC_F16)
-#define DUAL_FUNC_1 LT(2, KC_S)
-#define DUAL_FUNC_2 LT(2, KC_F)
-#define DUAL_FUNC_3 LT(7, KC_D)
-#define DUAL_FUNC_4 LT(5, KC_F16)
-#define DUAL_FUNC_5 LT(12, KC_B)
-#define DUAL_FUNC_6 LT(9, KC_3)
-#define DUAL_FUNC_7 LT(1, KC_F4)
-#define DUAL_FUNC_8 LT(11, KC_F8)
-#define DUAL_FUNC_9 LT(2, KC_W)
-#define DUAL_FUNC_10 LT(13, KC_D)
-#define DUAL_FUNC_11 LT(7, KC_N)
-#define DUAL_FUNC_12 LT(15, KC_6)
-#define DUAL_FUNC_13 LT(6, KC_K)
-#define DUAL_FUNC_14 LT(15, KC_F7)
-#define DUAL_FUNC_15 LT(3, KC_G)
-#define DUAL_FUNC_16 LT(9, KC_F13)
-#define DUAL_FUNC_17 LT(4, KC_F15)
-#define DUAL_FUNC_18 LT(11, KC_F18)
-#define DUAL_FUNC_19 LT(3, KC_V)
-#define DUAL_FUNC_20 LT(7, KC_S)
+#define DUAL_FUNC_0 LT(10, KC_F11)
+#define DUAL_FUNC_1 LT(10, KC_E)
+#define DUAL_FUNC_2 LT(2, KC_4)
+#define DUAL_FUNC_3 LT(12, KC_F11)
+#define DUAL_FUNC_4 LT(6, KC_4)
+#define DUAL_FUNC_5 LT(1, KC_Y)
+#define DUAL_FUNC_6 LT(15, KC_C)
+#define DUAL_FUNC_7 LT(5, KC_F21)
+#define DUAL_FUNC_8 LT(5, KC_B)
+#define DUAL_FUNC_9 LT(7, KC_W)
+#define DUAL_FUNC_10 LT(15, KC_O)
+#define DUAL_FUNC_11 LT(2, KC_F8)
+#define DUAL_FUNC_12 LT(13, KC_Y)
+#define DUAL_FUNC_13 LT(10, KC_J)
+#define DUAL_FUNC_14 LT(15, KC_D)
+#define DUAL_FUNC_15 LT(2, KC_F10)
+#define DUAL_FUNC_16 LT(12, KC_H)
+#define DUAL_FUNC_17 LT(1, KC_1)
+#define DUAL_FUNC_18 LT(12, KC_F3)
+#define DUAL_FUNC_19 LT(15, KC_8)
+#define DUAL_FUNC_20 LT(13, KC_F14)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_2,     ST_MACRO_3,     ST_MACRO_4,     KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, RGB_VAI,        RGB_SPI,        RGB_HUI,        RGB_MODE_FORWARD,KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_5,     ST_MACRO_6,     ST_MACRO_7,     ST_MACRO_8,     KC_TRANSPARENT, 
     KC_TRANSPARENT, RGB_VAD,        RGB_SPD,        RGB_HUD,        RGB_TOG,        KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_9,     ST_MACRO_10,    ST_MACRO_11,    ST_MACRO_12,    KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 QK_LLCK,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [6] = LAYOUT_voyager(
@@ -125,7 +125,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo4, TO(6)),
     COMBO(combo5, TO(2)),
     COMBO(combo6, TO(3)),
-    COMBO(combo7, KC_ENTER),
+    COMBO(combo7, KC_TAB),
     COMBO(combo8, LCTL(KC_BSPC)),
     COMBO(combo9, KC_BSPC),
 };
@@ -334,16 +334,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
           layer_on(1);
         } else {
+          if (!is_layer_locked(1)) {
           layer_off(1);
+          }
         }  
       }  
       return false;
     case DUAL_FUNC_2:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
-          register_code16(KC_TAB);
+          register_code16(KC_ENTER);
         } else {
-          unregister_code16(KC_TAB);
+          unregister_code16(KC_ENTER);
         }
       } else {
         if (record->event.pressed) {
