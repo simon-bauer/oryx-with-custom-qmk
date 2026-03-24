@@ -24,27 +24,27 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(10, KC_F11)
-#define DUAL_FUNC_1 LT(10, KC_E)
-#define DUAL_FUNC_2 LT(2, KC_4)
-#define DUAL_FUNC_3 LT(12, KC_F11)
-#define DUAL_FUNC_4 LT(6, KC_4)
-#define DUAL_FUNC_5 LT(1, KC_Y)
-#define DUAL_FUNC_6 LT(15, KC_C)
-#define DUAL_FUNC_7 LT(5, KC_F21)
-#define DUAL_FUNC_8 LT(5, KC_B)
-#define DUAL_FUNC_9 LT(7, KC_W)
-#define DUAL_FUNC_10 LT(15, KC_O)
-#define DUAL_FUNC_11 LT(2, KC_F8)
-#define DUAL_FUNC_12 LT(13, KC_Y)
-#define DUAL_FUNC_13 LT(10, KC_J)
-#define DUAL_FUNC_14 LT(15, KC_D)
-#define DUAL_FUNC_15 LT(2, KC_F10)
-#define DUAL_FUNC_16 LT(12, KC_H)
-#define DUAL_FUNC_17 LT(1, KC_1)
-#define DUAL_FUNC_18 LT(12, KC_F3)
-#define DUAL_FUNC_19 LT(15, KC_8)
-#define DUAL_FUNC_20 LT(13, KC_F14)
+#define DUAL_FUNC_0 LT(11, KC_F3)
+#define DUAL_FUNC_1 LT(2, KC_F20)
+#define DUAL_FUNC_2 LT(3, KC_F18)
+#define DUAL_FUNC_3 LT(2, KC_F18)
+#define DUAL_FUNC_4 LT(4, KC_Y)
+#define DUAL_FUNC_5 LT(12, KC_F8)
+#define DUAL_FUNC_6 LT(4, KC_E)
+#define DUAL_FUNC_7 LT(1, KC_3)
+#define DUAL_FUNC_8 LT(13, KC_6)
+#define DUAL_FUNC_9 LT(2, KC_F21)
+#define DUAL_FUNC_10 LT(14, KC_9)
+#define DUAL_FUNC_11 LT(7, KC_M)
+#define DUAL_FUNC_12 LT(10, KC_D)
+#define DUAL_FUNC_13 LT(4, KC_F16)
+#define DUAL_FUNC_14 LT(9, KC_1)
+#define DUAL_FUNC_15 LT(4, KC_5)
+#define DUAL_FUNC_16 LT(2, KC_F8)
+#define DUAL_FUNC_17 LT(12, KC_7)
+#define DUAL_FUNC_18 LT(14, KC_F12)
+#define DUAL_FUNC_19 LT(14, KC_U)
+#define DUAL_FUNC_20 LT(7, KC_Y)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -125,7 +125,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo4, TO(6)),
     COMBO(combo5, TO(2)),
     COMBO(combo6, TO(3)),
-    COMBO(combo7, KC_TAB),
+    COMBO(combo7, KC_ESCAPE),
     COMBO(combo8, LCTL(KC_BSPC)),
     COMBO(combo9, KC_BSPC),
 };
@@ -311,15 +311,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DUAL_FUNC_0:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
-          register_code16(KC_ESCAPE);
+          register_code16(KC_TAB);
         } else {
-          unregister_code16(KC_ESCAPE);
+          unregister_code16(KC_TAB);
         }
       } else {
         if (record->event.pressed) {
-          register_code16(LALT(LCTL(KC_TAB)));
+          register_code16(LALT(KC_TAB));
         } else {
-          unregister_code16(LALT(LCTL(KC_TAB)));
+          unregister_code16(LALT(KC_TAB));
         }  
       }  
       return false;
@@ -349,9 +349,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_code16(LALT(KC_TAB));
+          register_code16(LALT(LCTL(KC_TAB)));
         } else {
-          unregister_code16(LALT(KC_TAB));
+          unregister_code16(LALT(LCTL(KC_TAB)));
         }  
       }  
       return false;
