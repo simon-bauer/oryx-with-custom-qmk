@@ -25,53 +25,52 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(13, KC_U)
-#define DUAL_FUNC_1 LT(10, KC_F21)
-#define DUAL_FUNC_2 LT(1, KC_C)
-#define DUAL_FUNC_3 LT(9, KC_L)
-#define DUAL_FUNC_4 LT(11, KC_G)
-#define DUAL_FUNC_5 LT(12, KC_I)
-#define DUAL_FUNC_6 LT(11, KC_F8)
-#define DUAL_FUNC_7 LT(10, KC_F11)
-#define DUAL_FUNC_8 LT(7, KC_F6)
-#define DUAL_FUNC_9 LT(5, KC_F17)
-#define DUAL_FUNC_10 LT(13, KC_F24)
-#define DUAL_FUNC_11 LT(1, KC_F10)
-#define DUAL_FUNC_12 LT(9, KC_8)
-#define DUAL_FUNC_13 LT(6, KC_C)
-#define DUAL_FUNC_14 LT(1, KC_V)
-#define DUAL_FUNC_15 LT(6, KC_F13)
-#define DUAL_FUNC_16 LT(13, KC_F13)
-#define DUAL_FUNC_17 LT(11, KC_F11)
-#define DUAL_FUNC_18 LT(1, KC_F24)
+#define DUAL_FUNC_0 LT(13, KC_O)
+#define DUAL_FUNC_1 LT(10, KC_F14)
+#define DUAL_FUNC_2 LT(12, KC_V)
+#define DUAL_FUNC_3 LT(7, KC_F)
+#define DUAL_FUNC_4 LT(11, KC_B)
+#define DUAL_FUNC_5 LT(15, KC_E)
+#define DUAL_FUNC_6 LT(15, KC_7)
+#define DUAL_FUNC_7 LT(8, KC_F23)
+#define DUAL_FUNC_8 LT(14, KC_3)
+#define DUAL_FUNC_9 LT(3, KC_F24)
+#define DUAL_FUNC_10 LT(6, KC_5)
+#define DUAL_FUNC_11 LT(15, KC_T)
+#define DUAL_FUNC_12 LT(3, KC_C)
+#define DUAL_FUNC_13 LT(5, KC_F4)
+#define DUAL_FUNC_14 LT(4, KC_E)
+#define DUAL_FUNC_15 LT(9, KC_V)
+#define DUAL_FUNC_16 LT(2, KC_F10)
+#define DUAL_FUNC_17 LT(10, KC_1)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    RGB_HUI,        KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_J,           KC_L,           KC_U,           KC_Y,           ST_MACRO_0,     KC_AUDIO_VOL_UP,
-    RGB_MODE_FORWARD,MT(MOD_LALT, KC_A),LT(2, KC_R),    MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,                                           KC_M,           MT(MOD_LSFT, KC_N),MT(MOD_LCTL, KC_E),LT(3, KC_I),    MT(MOD_LALT, KC_O),KC_AUDIO_VOL_DOWN,
-    RGB_SPD,        MT(MOD_LGUI, KC_Z),KC_X,           KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       KC_DOT,         MT(MOD_LGUI, KC_DELETE),LALT(LGUI(KC_K)),
-                                                    DUAL_FUNC_0,    KC_ESCAPE,                                      KC_TAB,         KC_SPACE
+    KC_TRANSPARENT, KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_J,           KC_L,           KC_U,           KC_Y,           LGUI(LSFT(KC_S)),KC_TRANSPARENT, 
+    KC_TRANSPARENT, MT(MOD_LALT, KC_A),LT(2, KC_R),    MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,                                           KC_M,           MT(MOD_LSFT, KC_N),MT(MOD_LCTL, KC_E),LT(3, KC_I),    MT(MOD_LALT, KC_O),KC_TRANSPARENT, 
+    KC_TRANSPARENT, MT(MOD_LGUI, KC_Z),LT(4, KC_X),    KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       LT(4, KC_DOT),  MT(MOD_LGUI, KC_DELETE),KC_TRANSPARENT, 
+                                                    LT(1, KC_TAB),  KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_SPACE
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_W),     KC_TRANSPARENT, KC_TRANSPARENT, DUAL_FUNC_1,                                    KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, DUAL_FUNC_2,    KC_TRANSPARENT, DUAL_FUNC_3,    DUAL_FUNC_4,    KC_TRANSPARENT,                                 KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_APPLICATION, KC_TRANSPARENT, 
-    KC_TRANSPARENT, DUAL_FUNC_5,    LCTL(KC_X),     LCTL(KC_C),     KC_TRANSPARENT, DUAL_FUNC_6,                                    KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_1,     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_W),     KC_TRANSPARENT, KC_TRANSPARENT, DUAL_FUNC_0,                                    KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, DUAL_FUNC_1,    KC_TRANSPARENT, DUAL_FUNC_2,    DUAL_FUNC_3,    KC_TRANSPARENT,                                 KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_APPLICATION, KC_TRANSPARENT, 
+    KC_TRANSPARENT, DUAL_FUNC_4,    LCTL(KC_X),     LCTL(KC_C),     KC_TRANSPARENT, DUAL_FUNC_5,                                    KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_0,     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, DUAL_FUNC_7,    DUAL_FUNC_8,    DUAL_FUNC_9,    KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, DUAL_FUNC_10,   DUAL_FUNC_11,   DUAL_FUNC_12,   KC_COLN,        KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, DUAL_FUNC_13,   DUAL_FUNC_14,   DUAL_FUNC_15,   KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 ST_MACRO_1,     DUAL_FUNC_6,    DUAL_FUNC_7,    DUAL_FUNC_8,    KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, DUAL_FUNC_9,    DUAL_FUNC_10,   DUAL_FUNC_11,   KC_COLN,        KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, DUAL_FUNC_12,   DUAL_FUNC_13,   DUAL_FUNC_14,   KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_0
   ),
   [3] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_F9,          KC_F10,         KC_F11,         DUAL_FUNC_16,   KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_F5,          KC_F6,          KC_F7,          DUAL_FUNC_17,   KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          DUAL_FUNC_18,   KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_F9,          KC_F10,         KC_F11,         DUAL_FUNC_15,   KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_F5,          KC_F6,          KC_F7,          DUAL_FUNC_16,   KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          DUAL_FUNC_17,   KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [4] = LAYOUT_voyager(
@@ -84,15 +83,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [5] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_2,     ST_MACRO_3,     ST_MACRO_4,     KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_5,     ST_MACRO_6,     ST_MACRO_7,     ST_MACRO_8,     KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_9,     ST_MACRO_10,    ST_MACRO_11,    ST_MACRO_12,    KC_TRANSPARENT, 
-                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
+    KC_TRANSPARENT, RGB_VAI,        RGB_SPI,        RGB_HUI,        RGB_MODE_FORWARD,KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_5,     ST_MACRO_6,     ST_MACRO_7,     ST_MACRO_8,     KC_TRANSPARENT, 
+    KC_TRANSPARENT, RGB_VAD,        RGB_SPD,        RGB_HUD,        RGB_TOG,        KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_9,     ST_MACRO_10,    ST_MACRO_11,    ST_MACRO_12,    KC_TRANSPARENT, 
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, QK_LLCK
   ),
   [6] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_WH_LEFT,  KC_MS_WH_RIGHT, LGUI(LSFT(KC_S)),KC_TRANSPARENT,                                 KC_TRANSPARENT, LGUI(LSFT(KC_S)),KC_MS_WH_LEFT,  KC_MS_WH_RIGHT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_WH_LEFT,  KC_MS_WH_RIGHT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_WH_LEFT,  KC_MS_WH_RIGHT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, LCTL(KC_A),     KC_MS_WH_UP,    KC_MS_WH_DOWN,  KC_MS_BTN1,     KC_MS_BTN2,                                     KC_MS_BTN2,     KC_MS_BTN1,     KC_MS_WH_DOWN,  KC_MS_WH_UP,    LCTL(KC_A),     KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_DELETE,      LCTL(KC_X),     LCTL(KC_C),     KC_MS_DBL_CLICK,DUAL_FUNC_6,                                    DUAL_FUNC_6,    KC_MS_DBL_CLICK,LCTL(KC_C),     LCTL(KC_X),     KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_DELETE,      LCTL(KC_X),     LCTL(KC_C),     KC_MS_DBL_CLICK,DUAL_FUNC_5,                                    DUAL_FUNC_5,    KC_MS_DBL_CLICK,LCTL(KC_C),     LCTL(KC_X),     KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
@@ -106,35 +105,43 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 );
 
 const uint16_t PROGMEM combo0[] = { MT(MOD_LSFT, KC_T), MT(MOD_LSFT, KC_N), COMBO_END};
-const uint16_t PROGMEM combo1[] = { KC_COMMA, KC_DOT, COMBO_END};
-const uint16_t PROGMEM combo2[] = { KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM combo3[] = { KC_U, KC_Y, COMBO_END};
-const uint16_t PROGMEM combo4[] = { KC_W, KC_F, COMBO_END};
-const uint16_t PROGMEM combo5[] = { KC_C, KC_D, COMBO_END};
-const uint16_t PROGMEM combo6[] = { MT(MOD_LCTL, KC_E), KC_COMMA, COMBO_END};
-const uint16_t PROGMEM combo7[] = { MT(MOD_LCTL, KC_S), KC_C, COMBO_END};
-const uint16_t PROGMEM combo8[] = { MT(MOD_LCTL, KC_E), LT(3, KC_I), COMBO_END};
-const uint16_t PROGMEM combo9[] = { KC_L, KC_U, COMBO_END};
-const uint16_t PROGMEM combo10[] = { MT(MOD_LSFT, KC_N), KC_H, COMBO_END};
-const uint16_t PROGMEM combo11[] = { MT(MOD_LSFT, KC_T), KC_D, COMBO_END};
-const uint16_t PROGMEM combo12[] = { LT(2, KC_R), KC_X, COMBO_END};
-const uint16_t PROGMEM combo13[] = { LT(3, KC_I), KC_DOT, COMBO_END};
+const uint16_t PROGMEM combo1[] = { KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM combo2[] = { KC_W, KC_F, COMBO_END};
+const uint16_t PROGMEM combo3[] = { KC_C, LT(4, KC_X), COMBO_END};
+const uint16_t PROGMEM combo4[] = { MT(MOD_LCTL, KC_E), KC_COMMA, COMBO_END};
+const uint16_t PROGMEM combo5[] = { MT(MOD_LCTL, KC_S), KC_C, COMBO_END};
+const uint16_t PROGMEM combo6[] = { MT(MOD_LCTL, KC_E), LT(3, KC_I), COMBO_END};
+const uint16_t PROGMEM combo7[] = { KC_L, KC_U, COMBO_END};
+const uint16_t PROGMEM combo8[] = { MT(MOD_LSFT, KC_N), KC_H, COMBO_END};
+const uint16_t PROGMEM combo9[] = { MT(MOD_LSFT, KC_T), KC_D, COMBO_END};
+const uint16_t PROGMEM combo10[] = { LT(2, KC_R), LT(4, KC_X), COMBO_END};
+const uint16_t PROGMEM combo11[] = { LT(3, KC_I), LT(4, KC_DOT), COMBO_END};
+const uint16_t PROGMEM combo12[] = { KC_H, KC_COMMA, COMBO_END};
+const uint16_t PROGMEM combo13[] = { KC_J, KC_M, COMBO_END};
+const uint16_t PROGMEM combo14[] = { KC_M, KC_K, COMBO_END};
+const uint16_t PROGMEM combo15[] = { KC_M, MT(MOD_LSFT, KC_N), COMBO_END};
+const uint16_t PROGMEM combo16[] = { KC_U, MT(MOD_LCTL, KC_E), COMBO_END};
+const uint16_t PROGMEM combo17[] = { KC_F, MT(MOD_LCTL, KC_S), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, CW_TOGG),
-    COMBO(combo1, OSL(4)),
-    COMBO(combo2, OSL(4)),
-    COMBO(combo3, KC_BSPC),
-    COMBO(combo4, LCTL(KC_BSPC)),
-    COMBO(combo5, OSL(5)),
-    COMBO(combo6, TO(6)),
-    COMBO(combo7, TO(6)),
-    COMBO(combo8, KC_ENTER),
-    COMBO(combo9, ST_MACRO_13),
-    COMBO(combo10, TO(1)),
-    COMBO(combo11, TO(1)),
-    COMBO(combo12, TO(2)),
-    COMBO(combo13, TO(3)),
+    COMBO(combo1, KC_BSPC),
+    COMBO(combo2, LCTL(KC_BSPC)),
+    COMBO(combo3, OSL(5)),
+    COMBO(combo4, TO(6)),
+    COMBO(combo5, TO(6)),
+    COMBO(combo6, KC_ENTER),
+    COMBO(combo7, ST_MACRO_13),
+    COMBO(combo8, TO(1)),
+    COMBO(combo9, TO(1)),
+    COMBO(combo10, TO(2)),
+    COMBO(combo11, TO(3)),
+    COMBO(combo12, KC_ESCAPE),
+    COMBO(combo13, KC_AUDIO_VOL_UP),
+    COMBO(combo14, KC_AUDIO_VOL_DOWN),
+    COMBO(combo15, LALT(LGUI(KC_K))),
+    COMBO(combo16, TO(1)),
+    COMBO(combo17, TO(1)),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
@@ -143,13 +150,13 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM -40;
         case KC_SPACE:
             return TAPPING_TERM -40;
+        case DUAL_FUNC_7:
+            return TAPPING_TERM -50;
         case DUAL_FUNC_8:
             return TAPPING_TERM -50;
-        case DUAL_FUNC_9:
+        case DUAL_FUNC_10:
             return TAPPING_TERM -50;
         case DUAL_FUNC_11:
-            return TAPPING_TERM -50;
-        case DUAL_FUNC_12:
             return TAPPING_TERM -50;
         default:
             return TAPPING_TERM;
@@ -236,7 +243,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case QK_MODS ... QK_MODS_MAX:
     // Mouse and consumer keys (volume, media) with modifiers work inconsistently across operating systems,
     // this makes sure that modifiers are always applied to the key that was pressed.
-    if (IS_MOUSE_KEYCODE(QK_MODS_GET_BASIC_KEYCODE(keycode)) || IS_CONSUMER_KEYCODE(QK_MODS_GET_BASIC_KEYCODE(keycode))) {
+    if (IS_MOUSE_KEYCODE(QK_MODS_GET_BASIC_KEYCODE(keycode))) {
       if (record->event.pressed) {
         add_mods(QK_MODS_GET_MODS(keycode));
         send_keyboard_report();
@@ -251,12 +258,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_0:
     if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_LCTL(SS_TAP(X_HOME)))SS_DELAY(50)  SS_TAP(X_TAB)SS_DELAY(50)  SS_TAP(X_TAB)  SS_DELAY(50) SS_TAP(X_ENTER));
+      SEND_STRING(SS_LCTL(SS_TAP(X_RIGHT))SS_DELAY(50)  SS_LCTL(SS_TAP(X_LEFT))SS_DELAY(50)  SS_LCTL(SS_LSFT(SS_TAP(X_RIGHT))));
     }
     break;
     case ST_MACRO_1:
     if (record->event.pressed) {
-      SEND_STRING(SS_LCTL(SS_TAP(X_RIGHT))SS_DELAY(50)  SS_LCTL(SS_TAP(X_LEFT))SS_DELAY(50)  SS_LCTL(SS_LSFT(SS_TAP(X_RIGHT))));
+      SEND_STRING(SS_LALT(SS_LCTL(SS_TAP(X_HOME)))SS_DELAY(50)  SS_TAP(X_TAB)SS_DELAY(50)  SS_TAP(X_TAB)  SS_DELAY(50) SS_TAP(X_ENTER));
     }
     break;
     case ST_MACRO_2:
@@ -323,21 +330,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DUAL_FUNC_0:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
-          layer_move(1);
-        } else {
-          layer_move(1);
-        }
-      } else {
-        if (record->event.pressed) {
-          layer_on(1);
-        } else {
-          layer_off(1);
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_1:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
           register_code16(LCTL(KC_B));
         } else {
           unregister_code16(LCTL(KC_B));
@@ -350,7 +342,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_2:
+    case DUAL_FUNC_1:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(LCTL(KC_A));
@@ -365,7 +357,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_3:
+    case DUAL_FUNC_2:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(LCTL(KC_S));
@@ -380,7 +372,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_4:
+    case DUAL_FUNC_3:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(LCTL(KC_T));
@@ -395,7 +387,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_5:
+    case DUAL_FUNC_4:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(LCTL(KC_Z));
@@ -410,7 +402,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_6:
+    case DUAL_FUNC_5:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(LCTL(KC_V));
@@ -425,7 +417,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_7:
+    case DUAL_FUNC_6:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_7);
@@ -440,7 +432,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_8:
+    case DUAL_FUNC_7:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_8);
@@ -455,7 +447,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_9:
+    case DUAL_FUNC_8:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_9);
@@ -470,7 +462,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_10:
+    case DUAL_FUNC_9:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_1);
@@ -485,7 +477,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_11:
+    case DUAL_FUNC_10:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_2);
@@ -500,7 +492,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_12:
+    case DUAL_FUNC_11:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_3);
@@ -515,7 +507,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_13:
+    case DUAL_FUNC_12:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_4);
@@ -530,7 +522,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_14:
+    case DUAL_FUNC_13:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_5);
@@ -545,7 +537,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_15:
+    case DUAL_FUNC_14:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_6);
@@ -560,7 +552,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_16:
+    case DUAL_FUNC_15:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_F12);
@@ -575,7 +567,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_17:
+    case DUAL_FUNC_16:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_F8);
@@ -590,7 +582,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_18:
+    case DUAL_FUNC_17:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_F4);
