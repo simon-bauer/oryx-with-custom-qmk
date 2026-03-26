@@ -25,31 +25,31 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(11, KC_F2)
-#define DUAL_FUNC_1 LT(3, KC_F24)
-#define DUAL_FUNC_2 LT(11, KC_O)
-#define DUAL_FUNC_3 LT(12, KC_F6)
-#define DUAL_FUNC_4 LT(11, KC_S)
-#define DUAL_FUNC_5 LT(10, KC_1)
-#define DUAL_FUNC_6 LT(13, KC_K)
-#define DUAL_FUNC_7 LT(9, KC_F5)
-#define DUAL_FUNC_8 LT(7, KC_5)
-#define DUAL_FUNC_9 LT(3, KC_F16)
-#define DUAL_FUNC_10 LT(2, KC_7)
-#define DUAL_FUNC_11 LT(8, KC_O)
-#define DUAL_FUNC_12 LT(8, KC_F3)
-#define DUAL_FUNC_13 LT(13, KC_J)
-#define DUAL_FUNC_14 LT(8, KC_W)
-#define DUAL_FUNC_15 LT(9, KC_2)
-#define DUAL_FUNC_16 LT(12, KC_S)
-#define DUAL_FUNC_17 LT(5, KC_W)
+#define DUAL_FUNC_0 LT(1, KC_D)
+#define DUAL_FUNC_1 LT(8, KC_F12)
+#define DUAL_FUNC_2 LT(15, KC_O)
+#define DUAL_FUNC_3 LT(6, KC_F7)
+#define DUAL_FUNC_4 LT(3, KC_Y)
+#define DUAL_FUNC_5 LT(12, KC_F16)
+#define DUAL_FUNC_6 LT(14, KC_F21)
+#define DUAL_FUNC_7 LT(11, KC_N)
+#define DUAL_FUNC_8 LT(12, KC_E)
+#define DUAL_FUNC_9 LT(12, KC_8)
+#define DUAL_FUNC_10 LT(6, KC_F15)
+#define DUAL_FUNC_11 LT(2, KC_U)
+#define DUAL_FUNC_12 LT(7, KC_5)
+#define DUAL_FUNC_13 LT(6, KC_X)
+#define DUAL_FUNC_14 LT(10, KC_F12)
+#define DUAL_FUNC_15 LT(6, KC_L)
+#define DUAL_FUNC_16 LT(15, KC_T)
+#define DUAL_FUNC_17 LT(4, KC_9)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_J,           KC_L,           KC_U,           KC_Y,           LGUI(LSFT(KC_S)),KC_TRANSPARENT, 
     KC_TRANSPARENT, MT(MOD_LALT, KC_A),LT(2, KC_R),    MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,                                           KC_M,           MT(MOD_LSFT, KC_N),MT(MOD_LCTL, KC_E),LT(3, KC_I),    MT(MOD_LALT, KC_O),KC_TRANSPARENT, 
     KC_TRANSPARENT, MT(MOD_LGUI, KC_Z),LT(5, KC_X),    KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       KC_DOT,         MT(MOD_LGUI, KC_DELETE),KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LT(1, KC_TAB),                                  KC_SPACE,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LT(1, KC_TAB),                                  MT(MOD_LALT, KC_SPACE),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [1] = LAYOUT_voyager(
@@ -150,7 +150,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case MT(MOD_LGUI, KC_DELETE):
             return TAPPING_TERM -40;
-        case KC_SPACE:
+        case MT(MOD_LALT, KC_SPACE):
             return TAPPING_TERM -40;
         case DUAL_FUNC_7:
             return TAPPING_TERM -50;
