@@ -31,25 +31,25 @@ enum tap_dance_codes {
   DANCE_1,
 };
 
-#define DUAL_FUNC_0 LT(11, KC_5)
-#define DUAL_FUNC_1 LT(6, KC_A)
-#define DUAL_FUNC_2 LT(7, KC_F17)
-#define DUAL_FUNC_3 LT(10, KC_F9)
-#define DUAL_FUNC_4 LT(10, KC_D)
-#define DUAL_FUNC_5 LT(1, KC_F24)
-#define DUAL_FUNC_6 LT(1, KC_G)
-#define DUAL_FUNC_7 LT(11, KC_F22)
-#define DUAL_FUNC_8 LT(7, KC_F13)
-#define DUAL_FUNC_9 LT(1, KC_T)
-#define DUAL_FUNC_10 LT(2, KC_F16)
-#define DUAL_FUNC_11 LT(5, KC_9)
-#define DUAL_FUNC_12 LT(15, KC_S)
-#define DUAL_FUNC_13 LT(2, KC_J)
-#define DUAL_FUNC_14 LT(4, KC_F18)
-#define DUAL_FUNC_15 LT(4, KC_Q)
-#define DUAL_FUNC_16 LT(3, KC_A)
-#define DUAL_FUNC_17 LT(10, KC_C)
-#define DUAL_FUNC_18 LT(12, KC_F16)
+#define DUAL_FUNC_0 LT(6, KC_F6)
+#define DUAL_FUNC_1 LT(5, KC_F24)
+#define DUAL_FUNC_2 LT(4, KC_2)
+#define DUAL_FUNC_3 LT(10, KC_0)
+#define DUAL_FUNC_4 LT(13, KC_F14)
+#define DUAL_FUNC_5 LT(4, KC_C)
+#define DUAL_FUNC_6 LT(15, KC_3)
+#define DUAL_FUNC_7 LT(8, KC_F21)
+#define DUAL_FUNC_8 LT(7, KC_W)
+#define DUAL_FUNC_9 LT(12, KC_5)
+#define DUAL_FUNC_10 LT(3, KC_F13)
+#define DUAL_FUNC_11 LT(12, KC_H)
+#define DUAL_FUNC_12 LT(2, KC_3)
+#define DUAL_FUNC_13 LT(6, KC_L)
+#define DUAL_FUNC_14 LT(14, KC_F5)
+#define DUAL_FUNC_15 LT(15, KC_F11)
+#define DUAL_FUNC_16 LT(3, KC_J)
+#define DUAL_FUNC_17 LT(3, KC_F6)
+#define DUAL_FUNC_18 LT(11, KC_F14)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -140,9 +140,13 @@ const uint16_t PROGMEM combo11[] = { KC_T, KC_F9, COMBO_END};
 const uint16_t PROGMEM combo12[] = { KC_F12, KC_4, COMBO_END};
 const uint16_t PROGMEM combo13[] = { KC_4, KC_F13, COMBO_END};
 const uint16_t PROGMEM combo14[] = { KC_4, KC_F15, COMBO_END};
-const uint16_t PROGMEM combo15[] = { KC_F1, KC_J, COMBO_END};
-const uint16_t PROGMEM combo16[] = { KC_F17, KC_1, COMBO_END};
-const uint16_t PROGMEM combo17[] = { KC_F24, KC_T, COMBO_END};
+const uint16_t PROGMEM combo15[] = { KC_F17, KC_1, COMBO_END};
+const uint16_t PROGMEM combo16[] = { KC_F24, KC_T, COMBO_END};
+const uint16_t PROGMEM combo17[] = { KC_F16, KC_X, COMBO_END};
+const uint16_t PROGMEM combo18[] = { KC_J, KC_F2, COMBO_END};
+const uint16_t PROGMEM combo19[] = { KC_F23, KC_3, COMBO_END};
+const uint16_t PROGMEM combo20[] = { KC_J, KC_F1, COMBO_END};
+const uint16_t PROGMEM combo21[] = { KC_I, KC_F23, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, CW_TOGG),
@@ -160,9 +164,13 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo12, KC_AUDIO_VOL_UP),
     COMBO(combo13, KC_AUDIO_VOL_DOWN),
     COMBO(combo14, LALT(LGUI(KC_K))),
-    COMBO(combo15, LCTL(KC_C)),
+    COMBO(combo15, TO(8)),
     COMBO(combo16, TO(8)),
-    COMBO(combo17, TO(8)),
+    COMBO(combo17, KC_UP),
+    COMBO(combo18, KC_ENTER),
+    COMBO(combo19, KC_ENTER),
+    COMBO(combo20, KC_DELETE),
+    COMBO(combo21, KC_DELETE),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
