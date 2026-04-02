@@ -791,6 +791,7 @@ void matrix_scan_user(void) { // alt tab timer.
   if (is_alt_tab_active) {
     if (timer_elapsed(alt_tab_timer) > 600) {
       unregister_code(KC_LALT);
+      wait_ms(2);
       is_alt_tab_active = false;
     }
   }
