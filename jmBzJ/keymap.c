@@ -5,6 +5,9 @@
 #define ZSA_SAFE_RANGE SAFE_RANGE
 #endif
 
+bool is_alt_tab_active = false;
+uint16_t alt_tab_timer = 0;
+
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
   ST_MACRO_0,
@@ -370,6 +373,18 @@ tap_dance_action_t tap_dance_actions[] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+  case KC_MEDIA_NEXT_TRACK:
+  if (record->event.pressed) {
+    if (!is_alt_tab_active) {
+      is_alt_tab_active = true;
+      register_code(KC_LALT);
+    }
+    alt_tab_timer = timer_read();
+    register_code(KC_TAB);
+  } else {
+    unregister_code(KC_TAB);
+  }
+  break;
   case QK_MODS ... QK_MODS_MAX:
     // Mouse and consumer keys (volume, media) with modifiers work inconsistently across operating systems,
     // this makes sure that modifiers are always applied to the key that was pressed.
@@ -758,4 +773,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
   }
   return true;
+}
+
+void matrix_scan_user(void) { // The very important timer.
+  if (is_alt_tab_active) {
+    if (timer_elapsed(alt_tab_timer) > 1000) {
+      unregister_code(KC_LALT);
+      is_alt_tab_active = false;
+    }
+  }
 }
