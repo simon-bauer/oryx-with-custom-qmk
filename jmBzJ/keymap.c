@@ -381,22 +381,20 @@ tap_dance_action_t tap_dance_actions[] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-  case KC_MEDIA_NEXT_TRACK:
-  if (record->event.pressed) {
-    if (!is_alt_tab_active) {
-      is_alt_tab_active = true;
-      alt_tab_timer = timer_read();
-      register_code(KC_LALT);
-      wait_ms(5);
-      register_code(KC_TAB);
-    } else {
-      alt_tab_timer = timer_read();
-      register_code(KC_TAB);
+  case KC_MEDIA_NEXT_TRACK: // super alt tab
+    if (record->event.pressed) {
+      if (!is_alt_tab_active) {
+        is_alt_tab_active = true;
+        alt_tab_timer = timer_read();
+        register_code(KC_LALT);
+        wait_ms(5);
+        tap_code(KC_TAB);
+      } else {
+        alt_tab_timer = timer_read();
+        tap_code(KC_TAB);
+      }
     }
-  } else {
-    unregister_code(KC_TAB);
-  }
-  break;
+    return false;
   case QK_MODS ... QK_MODS_MAX:
     // Mouse and consumer keys (volume, media) with modifiers work inconsistently across operating systems,
     // this makes sure that modifiers are always applied to the key that was pressed.
@@ -789,7 +787,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void matrix_scan_user(void) { // alt tab timer.
   if (is_alt_tab_active) {
-    if (timer_elapsed(alt_tab_timer) > 600) {
+    if (timer_elapsed(alt_tab_timer) > 700) {
       unregister_code(KC_LALT);
       wait_ms(2);
       is_alt_tab_active = false;
