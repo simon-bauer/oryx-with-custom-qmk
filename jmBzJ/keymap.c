@@ -8,6 +8,9 @@
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
 
+bool is_ctrl_tab_active = false;
+uint16_t ctrl_tab_timer = 0;
+
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
   ST_MACRO_0,
@@ -423,6 +426,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
     }
     return false;
+  case KC_MEDIA_PREV_TRACK: // super ctrl tab
+    if (record->event.pressed) {
+      if (!is_ctrl_tab_active) {
+        is_ctrl_tab_active = true;
+        ctrl_tab_timer = timer_read();
+        register_code(KC_LCTL);
+        wait_ms(5);
+        tap_code(KC_TAB);
+      } else {
+        ctrl_tab_timer = timer_read();
+        tap_code(KC_TAB);
+      }
+    }
+    return false;
   case QK_MODS ... QK_MODS_MAX:
     // Mouse and consumer keys (volume, media) with modifiers work inconsistently across operating systems,
     // this makes sure that modifiers are always applied to the key that was pressed.
@@ -800,6 +817,13 @@ void matrix_scan_user(void) { // alt tab timer.
       unregister_code(KC_LALT);
       wait_ms(2);
       is_alt_tab_active = false;
+    }
+  }
+  if (is_ctrl_tab_active) {
+    if (timer_elapsed(ctrl_tab_timer) > 1000) {
+      unregister_code(KC_LCTL);
+      wait_ms(2);
+      is_ctrl_tab_active = false;
     }
   }
 }
