@@ -32,31 +32,64 @@ enum tap_dance_codes {
   DANCE_2,
 };
 
-#define DUAL_FUNC_0 LT(13, KC_8)
-#define DUAL_FUNC_1 LT(11, KC_F2)
-#define DUAL_FUNC_2 LT(9, KC_V)
-#define DUAL_FUNC_3 LT(7, KC_9)
-#define DUAL_FUNC_4 LT(12, KC_F13)
-#define DUAL_FUNC_5 LT(1, KC_Z)
-#define DUAL_FUNC_6 LT(1, KC_7)
-#define DUAL_FUNC_7 LT(2, KC_D)
-#define DUAL_FUNC_8 LT(12, KC_L)
-#define DUAL_FUNC_9 LT(15, KC_Q)
-#define DUAL_FUNC_10 LT(8, KC_F17)
-#define DUAL_FUNC_11 LT(7, KC_F8)
-#define DUAL_FUNC_12 LT(1, KC_M)
-#define DUAL_FUNC_13 LT(7, KC_F7)
-#define DUAL_FUNC_14 LT(5, KC_C)
-#define DUAL_FUNC_15 LT(13, KC_F5)
-#define DUAL_FUNC_16 LT(9, KC_S)
-#define DUAL_FUNC_17 LT(8, KC_Q)
+#define DUAL_FUNC_0 LT(2, KC_F)
+#define DUAL_FUNC_1 LT(11, KC_5)
+#define DUAL_FUNC_2 LT(4, KC_D)
+#define DUAL_FUNC_3 LT(14, KC_8)
+#define DUAL_FUNC_4 LT(10, KC_G)
+#define DUAL_FUNC_5 LT(8, KC_T)
+#define DUAL_FUNC_6 LT(9, KC_9)
+#define DUAL_FUNC_7 LT(5, KC_3)
+#define DUAL_FUNC_8 LT(13, KC_3)
+#define DUAL_FUNC_9 LT(7, KC_F22)
+#define DUAL_FUNC_10 LT(8, KC_S)
+#define DUAL_FUNC_11 LT(6, KC_P)
+#define DUAL_FUNC_12 LT(1, KC_F6)
+#define DUAL_FUNC_13 LT(2, KC_S)
+#define DUAL_FUNC_14 LT(2, KC_E)
+#define DUAL_FUNC_15 LT(5, KC_E)
+#define DUAL_FUNC_16 LT(10, KC_F9)
+#define DUAL_FUNC_17 LT(3, KC_F2)
+#define DUAL_FUNC_18 LT(4, KC_F3)
+#define DUAL_FUNC_19 LT(11, KC_F13)
+#define DUAL_FUNC_20 LT(6, KC_F14)
+#define DUAL_FUNC_21 LT(2, KC_F15)
+#define DUAL_FUNC_22 LT(9, KC_F6)
+#define DUAL_FUNC_23 LT(1, KC_F4)
+#define DUAL_FUNC_24 LT(1, KC_1)
+#define DUAL_FUNC_25 LT(7, KC_9)
+#define DUAL_FUNC_26 LT(14, KC_F12)
+#define DUAL_FUNC_27 LT(12, KC_V)
+#define DUAL_FUNC_28 LT(11, KC_J)
+#define DUAL_FUNC_29 LT(14, KC_N)
+#define DUAL_FUNC_30 LT(9, KC_A)
+#define DUAL_FUNC_31 LT(5, KC_Z)
+#define DUAL_FUNC_32 LT(9, KC_Z)
+#define DUAL_FUNC_33 LT(15, KC_P)
+#define DUAL_FUNC_34 LT(15, KC_F5)
+#define DUAL_FUNC_35 LT(11, KC_F11)
+#define DUAL_FUNC_36 LT(11, KC_F15)
+#define DUAL_FUNC_37 LT(15, KC_3)
+#define DUAL_FUNC_38 LT(6, KC_L)
+#define DUAL_FUNC_39 LT(8, KC_2)
+#define DUAL_FUNC_40 LT(8, KC_E)
+#define DUAL_FUNC_41 LT(15, KC_Q)
+#define DUAL_FUNC_42 LT(4, KC_F18)
+#define DUAL_FUNC_43 LT(14, KC_Z)
+#define DUAL_FUNC_44 LT(14, KC_G)
+#define DUAL_FUNC_45 LT(11, KC_G)
+#define DUAL_FUNC_46 LT(15, KC_F8)
+#define DUAL_FUNC_47 LT(10, KC_F1)
+#define DUAL_FUNC_48 LT(4, KC_F17)
+#define DUAL_FUNC_49 LT(15, KC_H)
+#define DUAL_FUNC_50 LT(8, KC_F5)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_MEDIA_NEXT_TRACK,KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_MEDIA_NEXT_TRACK,
     KC_MS_WH_DOWN,  DUAL_FUNC_0,    KC_W,           KC_F,           KC_P,           KC_B,                                           KC_J,           KC_L,           KC_U,           KC_Y,           DUAL_FUNC_1,    KC_MS_WH_DOWN,  
     KC_MS_BTN1,     LT(5, KC_A),    LT(3, KC_R),    MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,                                           KC_M,           MT(MOD_LSFT, KC_N),MT(MOD_LCTL, KC_E),LT(4, KC_I),    LT(6, KC_O),    KC_MS_BTN1,     
-    TD(DANCE_0),    MT(MOD_LALT, KC_Z),KC_X,           KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           MEH_T(KC_COMMA),KC_DOT,         MT(MOD_LALT, KC_DELETE),TD(DANCE_1),    
+    TD(DANCE_0),    MT(MOD_LALT, KC_Z),KC_X,           KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       KC_DOT,         MT(MOD_LALT, KC_DELETE),TD(DANCE_1),    
                                                     LT(2, KC_TAB),  KC_ESCAPE,                                      KC_ENTER,       MT(MOD_LGUI, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
@@ -108,6 +141,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, RGB_VAD,        RGB_SPD,        RGB_HUD,        RGB_TOG,        KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_9,     ST_MACRO_10,    ST_MACRO_11,    ST_MACRO_12,    KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
+  [8] = LAYOUT_voyager(
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, DUAL_FUNC_18,   DUAL_FUNC_19,   DUAL_FUNC_20,   DUAL_FUNC_21,   DUAL_FUNC_22,                                   DUAL_FUNC_35,   DUAL_FUNC_36,   DUAL_FUNC_37,   DUAL_FUNC_38,   KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, DUAL_FUNC_23,   DUAL_FUNC_24,   DUAL_FUNC_25,   DUAL_FUNC_26,   DUAL_FUNC_27,                                   DUAL_FUNC_39,   DUAL_FUNC_40,   DUAL_FUNC_41,   DUAL_FUNC_42,   DUAL_FUNC_43,   KC_TRANSPARENT, 
+    KC_TRANSPARENT, DUAL_FUNC_28,   DUAL_FUNC_29,   DUAL_FUNC_30,   DUAL_FUNC_31,   DUAL_FUNC_32,                                   DUAL_FUNC_44,   DUAL_FUNC_45,   DUAL_FUNC_46,   DUAL_FUNC_47,   DUAL_FUNC_48,   KC_TRANSPARENT, 
+                                                    DUAL_FUNC_33,   DUAL_FUNC_34,                                   DUAL_FUNC_49,   DUAL_FUNC_50
+  ),
+  [9] = LAYOUT_voyager(
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, LALT(LCTL(LSFT(KC_Q))),LALT(LCTL(LSFT(KC_W))),LALT(LCTL(LSFT(KC_F))),LALT(LCTL(LSFT(KC_P))),LALT(LCTL(LSFT(KC_B))),                                LALT(LCTL(LSFT(KC_J))),LALT(LCTL(LSFT(KC_L))),LALT(LCTL(LSFT(KC_U))),LALT(LCTL(LSFT(KC_Y))),KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, LALT(LCTL(LSFT(KC_A))),LALT(LCTL(LSFT(KC_R))),LALT(LCTL(LSFT(KC_S))),LALT(LCTL(LSFT(KC_T))),LALT(LCTL(LSFT(KC_G))),                                LALT(LCTL(LSFT(KC_M))),LALT(LCTL(LSFT(KC_N))),LALT(LCTL(LSFT(KC_E))),LALT(LCTL(LSFT(KC_I))),LALT(LCTL(LSFT(KC_O))),KC_TRANSPARENT, 
+    KC_TRANSPARENT, LALT(LCTL(LSFT(KC_Z))),LALT(LCTL(LSFT(KC_X))),LALT(LCTL(LSFT(KC_C))),LALT(LCTL(LSFT(KC_D))),LALT(LCTL(LSFT(KC_V))),                                LALT(LCTL(LSFT(KC_K))),LALT(LCTL(LSFT(KC_H))),LALT(LCTL(LSFT(KC_COMMA))),LALT(LCTL(LSFT(KC_DOT))),LALT(LCTL(LSFT(KC_DELETE))),KC_TRANSPARENT, 
+                                                    LALT(LCTL(LSFT(KC_TAB))),LALT(LCTL(LSFT(KC_ESCAPE))),                                LALT(LCTL(LSFT(KC_ENTER))),LALT(LCTL(LSFT(KC_SPACE)))
+  ),
 };
 
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
@@ -133,16 +180,19 @@ const uint16_t PROGMEM combo11[] = { KC_T, KC_F9, COMBO_END};
 const uint16_t PROGMEM combo12[] = { KC_F12, KC_4, COMBO_END};
 const uint16_t PROGMEM combo13[] = { KC_4, KC_F13, COMBO_END};
 const uint16_t PROGMEM combo14[] = { KC_4, KC_F15, COMBO_END};
-const uint16_t PROGMEM combo15[] = { KC_F16, KC_X, COMBO_END};
-const uint16_t PROGMEM combo16[] = { KC_J, KC_F2, COMBO_END};
-const uint16_t PROGMEM combo17[] = { KC_F23, KC_3, COMBO_END};
-const uint16_t PROGMEM combo18[] = { KC_J, KC_F1, COMBO_END};
-const uint16_t PROGMEM combo19[] = { KC_I, KC_F23, COMBO_END};
-const uint16_t PROGMEM combo20[] = { KC_D, KC_F17, COMBO_END};
-const uint16_t PROGMEM combo21[] = { KC_O, KC_F1, COMBO_END};
-const uint16_t PROGMEM combo22[] = { KC_F22, KC_I, COMBO_END};
-const uint16_t PROGMEM combo23[] = { KC_F17, KC_1, COMBO_END};
-const uint16_t PROGMEM combo24[] = { KC_F24, KC_T, COMBO_END};
+const uint16_t PROGMEM combo15[] = { KC_J, KC_F2, COMBO_END};
+const uint16_t PROGMEM combo16[] = { KC_F23, KC_3, COMBO_END};
+const uint16_t PROGMEM combo17[] = { KC_J, KC_F1, COMBO_END};
+const uint16_t PROGMEM combo18[] = { KC_I, KC_F23, COMBO_END};
+const uint16_t PROGMEM combo19[] = { KC_D, KC_F17, COMBO_END};
+const uint16_t PROGMEM combo20[] = { KC_O, KC_F1, COMBO_END};
+const uint16_t PROGMEM combo21[] = { KC_F22, KC_I, COMBO_END};
+const uint16_t PROGMEM combo22[] = { KC_F17, KC_1, COMBO_END};
+const uint16_t PROGMEM combo23[] = { KC_F24, KC_T, COMBO_END};
+const uint16_t PROGMEM combo24[] = { KC_F8, KC_C, COMBO_END};
+const uint16_t PROGMEM combo25[] = { KC_8, KC_F15, COMBO_END};
+const uint16_t PROGMEM combo26[] = { KC_F, KC_F7, COMBO_END};
+const uint16_t PROGMEM combo27[] = { KC_F16, KC_X, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, CW_TOGG),
@@ -160,16 +210,19 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo12, KC_AUDIO_VOL_UP),
     COMBO(combo13, KC_AUDIO_VOL_DOWN),
     COMBO(combo14, LALT(LGUI(KC_K))),
-    COMBO(combo15, KC_UP),
+    COMBO(combo15, KC_ENTER),
     COMBO(combo16, KC_ENTER),
-    COMBO(combo17, KC_ENTER),
+    COMBO(combo17, KC_DELETE),
     COMBO(combo18, KC_DELETE),
-    COMBO(combo19, KC_DELETE),
-    COMBO(combo20, KC_MEDIA_NEXT_TRACK),
+    COMBO(combo19, KC_MEDIA_NEXT_TRACK),
+    COMBO(combo20, LALT(KC_F4)),
     COMBO(combo21, LALT(KC_F4)),
-    COMBO(combo22, LALT(KC_F4)),
+    COMBO(combo22, KC_MEDIA_PREV_TRACK),
     COMBO(combo23, KC_MEDIA_PREV_TRACK),
-    COMBO(combo24, KC_MEDIA_PREV_TRACK),
+    COMBO(combo24, OSL(9)),
+    COMBO(combo25, OSL(9)),
+    COMBO(combo26, OSL(8)),
+    COMBO(combo27, OSL(8)),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
@@ -769,6 +822,501 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           register_code16(LALT(KC_F4));
         } else {
           unregister_code16(LALT(KC_F4));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_18:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_Q));
+        } else {
+          unregister_code16(LCTL(KC_Q));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_Q)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_Q)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_19:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_W));
+        } else {
+          unregister_code16(LCTL(KC_W));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_W)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_W)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_20:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_F));
+        } else {
+          unregister_code16(LCTL(KC_F));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_F)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_F)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_21:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_P));
+        } else {
+          unregister_code16(LCTL(KC_P));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_P)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_P)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_22:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_B));
+        } else {
+          unregister_code16(LCTL(KC_B));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_B)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_B)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_23:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_A));
+        } else {
+          unregister_code16(LCTL(KC_A));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_A)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_A)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_24:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_R));
+        } else {
+          unregister_code16(LCTL(KC_R));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_R)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_R)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_25:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_S));
+        } else {
+          unregister_code16(LCTL(KC_S));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_S)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_S)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_26:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_T));
+        } else {
+          unregister_code16(LCTL(KC_T));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_T)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_T)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_27:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_G));
+        } else {
+          unregister_code16(LCTL(KC_G));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_G)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_G)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_28:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_Z));
+        } else {
+          unregister_code16(LCTL(KC_Z));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_Z)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_Z)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_29:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_X));
+        } else {
+          unregister_code16(LCTL(KC_X));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_X)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_X)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_30:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_C));
+        } else {
+          unregister_code16(LCTL(KC_C));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_C)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_C)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_31:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_D));
+        } else {
+          unregister_code16(LCTL(KC_D));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_D)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_D)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_32:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_V));
+        } else {
+          unregister_code16(LCTL(KC_V));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_V)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_V)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_33:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_TAB));
+        } else {
+          unregister_code16(LCTL(KC_TAB));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_TAB)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_TAB)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_34:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_ESCAPE));
+        } else {
+          unregister_code16(LCTL(KC_ESCAPE));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_ESCAPE)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_ESCAPE)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_35:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_J));
+        } else {
+          unregister_code16(LCTL(KC_J));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_J)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_J)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_36:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_L));
+        } else {
+          unregister_code16(LCTL(KC_L));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_L)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_L)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_37:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_U));
+        } else {
+          unregister_code16(LCTL(KC_U));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_U)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_U)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_38:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_Y));
+        } else {
+          unregister_code16(LCTL(KC_Y));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_Y)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_Y)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_39:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_M));
+        } else {
+          unregister_code16(LCTL(KC_M));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_M)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_M)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_40:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_N));
+        } else {
+          unregister_code16(LCTL(KC_N));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_N)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_N)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_41:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_E));
+        } else {
+          unregister_code16(LCTL(KC_E));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_E)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_E)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_42:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_I));
+        } else {
+          unregister_code16(LCTL(KC_I));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_I)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_I)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_43:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_O));
+        } else {
+          unregister_code16(LCTL(KC_O));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_O)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_O)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_44:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_K));
+        } else {
+          unregister_code16(LCTL(KC_K));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_K)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_K)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_45:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_H));
+        } else {
+          unregister_code16(LCTL(KC_H));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_H)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_H)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_46:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_COMMA));
+        } else {
+          unregister_code16(LCTL(KC_COMMA));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_COMMA)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_COMMA)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_47:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_DOT));
+        } else {
+          unregister_code16(LCTL(KC_DOT));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_DOT)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_DOT)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_48:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_DELETE));
+        } else {
+          unregister_code16(LCTL(KC_DELETE));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_DELETE)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_DELETE)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_49:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_ENTER));
+        } else {
+          unregister_code16(LCTL(KC_ENTER));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_ENTER)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_ENTER)));
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_50:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_SPACE));
+        } else {
+          unregister_code16(LCTL(KC_SPACE));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(LCTL(LSFT(KC_SPACE)));
+        } else {
+          unregister_code16(LCTL(LSFT(KC_SPACE)));
         }  
       }  
       return false;
