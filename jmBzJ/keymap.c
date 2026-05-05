@@ -38,57 +38,57 @@ enum tap_dance_codes {
   DANCE_2,
 };
 
-#define DUAL_FUNC_0 LT(2, KC_F)
-#define DUAL_FUNC_1 LT(11, KC_5)
-#define DUAL_FUNC_2 LT(4, KC_D)
-#define DUAL_FUNC_3 LT(14, KC_8)
-#define DUAL_FUNC_4 LT(10, KC_G)
-#define DUAL_FUNC_5 LT(8, KC_T)
-#define DUAL_FUNC_6 LT(9, KC_9)
-#define DUAL_FUNC_7 LT(5, KC_3)
-#define DUAL_FUNC_8 LT(13, KC_3)
-#define DUAL_FUNC_9 LT(7, KC_F22)
-#define DUAL_FUNC_10 LT(8, KC_S)
-#define DUAL_FUNC_11 LT(6, KC_P)
-#define DUAL_FUNC_12 LT(1, KC_F6)
-#define DUAL_FUNC_13 LT(2, KC_S)
-#define DUAL_FUNC_14 LT(2, KC_E)
-#define DUAL_FUNC_15 LT(5, KC_E)
-#define DUAL_FUNC_16 LT(10, KC_F9)
-#define DUAL_FUNC_17 LT(3, KC_F2)
-#define DUAL_FUNC_18 LT(4, KC_F3)
-#define DUAL_FUNC_19 LT(11, KC_F13)
-#define DUAL_FUNC_20 LT(6, KC_F14)
-#define DUAL_FUNC_21 LT(2, KC_F15)
-#define DUAL_FUNC_22 LT(9, KC_F6)
-#define DUAL_FUNC_23 LT(1, KC_F4)
-#define DUAL_FUNC_24 LT(1, KC_1)
-#define DUAL_FUNC_25 LT(7, KC_9)
-#define DUAL_FUNC_26 LT(14, KC_F12)
-#define DUAL_FUNC_27 LT(12, KC_V)
-#define DUAL_FUNC_28 LT(11, KC_J)
-#define DUAL_FUNC_29 LT(14, KC_N)
-#define DUAL_FUNC_30 LT(9, KC_A)
-#define DUAL_FUNC_31 LT(5, KC_Z)
-#define DUAL_FUNC_32 LT(9, KC_Z)
-#define DUAL_FUNC_33 LT(15, KC_P)
-#define DUAL_FUNC_34 LT(15, KC_F5)
-#define DUAL_FUNC_35 LT(11, KC_F11)
-#define DUAL_FUNC_36 LT(11, KC_F15)
-#define DUAL_FUNC_37 LT(15, KC_3)
-#define DUAL_FUNC_38 LT(6, KC_L)
-#define DUAL_FUNC_39 LT(8, KC_2)
-#define DUAL_FUNC_40 LT(8, KC_E)
-#define DUAL_FUNC_41 LT(15, KC_Q)
-#define DUAL_FUNC_42 LT(4, KC_F18)
-#define DUAL_FUNC_43 LT(14, KC_Z)
-#define DUAL_FUNC_44 LT(14, KC_G)
-#define DUAL_FUNC_45 LT(11, KC_G)
-#define DUAL_FUNC_46 LT(15, KC_F8)
-#define DUAL_FUNC_47 LT(10, KC_F1)
-#define DUAL_FUNC_48 LT(4, KC_F17)
-#define DUAL_FUNC_49 LT(15, KC_H)
-#define DUAL_FUNC_50 LT(8, KC_F5)
+#define DUAL_FUNC_0 LT(10, KC_E)
+#define DUAL_FUNC_1 LT(2, KC_3)
+#define DUAL_FUNC_2 LT(8, KC_E)
+#define DUAL_FUNC_3 LT(9, KC_B)
+#define DUAL_FUNC_4 LT(3, KC_F21)
+#define DUAL_FUNC_5 LT(12, KC_D)
+#define DUAL_FUNC_6 LT(9, KC_P)
+#define DUAL_FUNC_7 LT(5, KC_1)
+#define DUAL_FUNC_8 LT(11, KC_F20)
+#define DUAL_FUNC_9 LT(5, KC_F19)
+#define DUAL_FUNC_10 LT(15, KC_J)
+#define DUAL_FUNC_11 LT(2, KC_F)
+#define DUAL_FUNC_12 LT(4, KC_F11)
+#define DUAL_FUNC_13 LT(12, KC_R)
+#define DUAL_FUNC_14 LT(8, KC_I)
+#define DUAL_FUNC_15 LT(2, KC_F2)
+#define DUAL_FUNC_16 LT(13, KC_Q)
+#define DUAL_FUNC_17 LT(15, KC_D)
+#define DUAL_FUNC_18 LT(11, KC_F16)
+#define DUAL_FUNC_19 LT(11, KC_I)
+#define DUAL_FUNC_20 LT(11, KC_M)
+#define DUAL_FUNC_21 LT(15, KC_F20)
+#define DUAL_FUNC_22 LT(13, KC_F19)
+#define DUAL_FUNC_23 LT(15, KC_F)
+#define DUAL_FUNC_24 LT(14, KC_F24)
+#define DUAL_FUNC_25 LT(9, KC_H)
+#define DUAL_FUNC_26 LT(7, KC_A)
+#define DUAL_FUNC_27 LT(10, KC_F2)
+#define DUAL_FUNC_28 LT(7, KC_H)
+#define DUAL_FUNC_29 LT(9, KC_7)
+#define DUAL_FUNC_30 LT(9, KC_0)
+#define DUAL_FUNC_31 LT(13, KC_I)
+#define DUAL_FUNC_32 LT(7, KC_F22)
+#define DUAL_FUNC_33 LT(11, KC_F24)
+#define DUAL_FUNC_34 LT(13, KC_E)
+#define DUAL_FUNC_35 LT(8, KC_S)
+#define DUAL_FUNC_36 LT(4, KC_8)
+#define DUAL_FUNC_37 LT(11, KC_W)
+#define DUAL_FUNC_38 LT(10, KC_6)
+#define DUAL_FUNC_39 LT(10, KC_F23)
+#define DUAL_FUNC_40 LT(12, KC_A)
+#define DUAL_FUNC_41 LT(2, KC_0)
+#define DUAL_FUNC_42 LT(10, KC_I)
+#define DUAL_FUNC_43 LT(12, KC_F23)
+#define DUAL_FUNC_44 LT(3, KC_C)
+#define DUAL_FUNC_45 LT(3, KC_F7)
+#define DUAL_FUNC_46 LT(6, KC_I)
+#define DUAL_FUNC_47 LT(14, KC_6)
+#define DUAL_FUNC_48 LT(12, KC_F21)
+#define DUAL_FUNC_49 LT(3, KC_M)
+#define DUAL_FUNC_50 LT(10, KC_F20)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -129,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [5] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_AMPR,        KC_PIPE,        KC_CIRC,        KC_TILD,        KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_ASTR,        KC_LPRN,        KC_RPRN,        KC_COLN,        KC_SCLN,        KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_ASTR,        KC_LPRN,        KC_RPRN,        KC_SCLN,        KC_COLN,        KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_PLUS,        KC_LCBR,        KC_RCBR,        KC_BSLS,        KC_QUES,        KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
@@ -199,6 +199,8 @@ const uint16_t PROGMEM combo24[] = { KC_F8, KC_C, COMBO_END};
 const uint16_t PROGMEM combo25[] = { KC_8, KC_F15, COMBO_END};
 const uint16_t PROGMEM combo26[] = { KC_F, KC_F7, COMBO_END};
 const uint16_t PROGMEM combo27[] = { KC_F16, KC_X, COMBO_END};
+const uint16_t PROGMEM combo28[] = { KC_F20, KC_DOT, COMBO_END};
+const uint16_t PROGMEM combo29[] = { KC_Z, KC_F4, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, CW_TOGG),
@@ -229,6 +231,8 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo25, OSL(9)),
     COMBO(combo26, OSL(8)),
     COMBO(combo27, OSL(8)),
+    COMBO(combo28, OSL(4)),
+    COMBO(combo29, OSL(3)),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
