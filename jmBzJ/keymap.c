@@ -38,57 +38,57 @@ enum tap_dance_codes {
   DANCE_2,
 };
 
-#define DUAL_FUNC_0 LT(4, KC_F7)
-#define DUAL_FUNC_1 LT(7, KC_B)
-#define DUAL_FUNC_2 LT(8, KC_Q)
-#define DUAL_FUNC_3 LT(9, KC_F6)
-#define DUAL_FUNC_4 LT(12, KC_1)
-#define DUAL_FUNC_5 LT(8, KC_N)
-#define DUAL_FUNC_6 LT(5, KC_T)
-#define DUAL_FUNC_7 LT(13, KC_H)
-#define DUAL_FUNC_8 LT(3, KC_F1)
-#define DUAL_FUNC_9 LT(12, KC_F11)
-#define DUAL_FUNC_10 LT(4, KC_Z)
-#define DUAL_FUNC_11 LT(8, KC_E)
-#define DUAL_FUNC_12 LT(13, KC_O)
-#define DUAL_FUNC_13 LT(8, KC_6)
-#define DUAL_FUNC_14 LT(7, KC_A)
-#define DUAL_FUNC_15 LT(4, KC_4)
-#define DUAL_FUNC_16 LT(13, KC_F9)
-#define DUAL_FUNC_17 LT(12, KC_F24)
-#define DUAL_FUNC_18 LT(12, KC_V)
-#define DUAL_FUNC_19 LT(10, KC_V)
-#define DUAL_FUNC_20 LT(8, KC_H)
-#define DUAL_FUNC_21 LT(10, KC_F7)
-#define DUAL_FUNC_22 LT(5, KC_F8)
-#define DUAL_FUNC_23 LT(5, KC_F)
-#define DUAL_FUNC_24 LT(12, KC_F8)
-#define DUAL_FUNC_25 LT(8, KC_F24)
-#define DUAL_FUNC_26 LT(9, KC_F15)
-#define DUAL_FUNC_27 LT(11, KC_O)
-#define DUAL_FUNC_28 LT(11, KC_F4)
-#define DUAL_FUNC_29 LT(13, KC_9)
-#define DUAL_FUNC_30 LT(14, KC_U)
-#define DUAL_FUNC_31 LT(1, KC_U)
-#define DUAL_FUNC_32 LT(6, KC_F6)
-#define DUAL_FUNC_33 LT(6, KC_8)
-#define DUAL_FUNC_34 LT(7, KC_F19)
-#define DUAL_FUNC_35 LT(7, KC_F14)
-#define DUAL_FUNC_36 LT(9, KC_Y)
-#define DUAL_FUNC_37 LT(14, KC_L)
-#define DUAL_FUNC_38 LT(7, KC_R)
-#define DUAL_FUNC_39 LT(12, KC_G)
-#define DUAL_FUNC_40 LT(9, KC_B)
-#define DUAL_FUNC_41 LT(6, KC_S)
-#define DUAL_FUNC_42 LT(1, KC_D)
-#define DUAL_FUNC_43 LT(5, KC_7)
-#define DUAL_FUNC_44 LT(12, KC_F7)
-#define DUAL_FUNC_45 LT(12, KC_F5)
-#define DUAL_FUNC_46 LT(14, KC_0)
-#define DUAL_FUNC_47 LT(1, KC_F23)
-#define DUAL_FUNC_48 LT(12, KC_F17)
-#define DUAL_FUNC_49 LT(1, KC_8)
-#define DUAL_FUNC_50 LT(10, KC_F8)
+#define DUAL_FUNC_0 LT(6, KC_F22)
+#define DUAL_FUNC_1 LT(1, KC_F20)
+#define DUAL_FUNC_2 LT(1, KC_K)
+#define DUAL_FUNC_3 LT(2, KC_Z)
+#define DUAL_FUNC_4 LT(4, KC_F12)
+#define DUAL_FUNC_5 LT(14, KC_C)
+#define DUAL_FUNC_6 LT(11, KC_E)
+#define DUAL_FUNC_7 LT(11, KC_H)
+#define DUAL_FUNC_8 LT(4, KC_F11)
+#define DUAL_FUNC_9 LT(2, KC_W)
+#define DUAL_FUNC_10 LT(11, KC_5)
+#define DUAL_FUNC_11 LT(10, KC_F11)
+#define DUAL_FUNC_12 LT(8, KC_7)
+#define DUAL_FUNC_13 LT(13, KC_P)
+#define DUAL_FUNC_14 LT(11, KC_F22)
+#define DUAL_FUNC_15 LT(8, KC_C)
+#define DUAL_FUNC_16 LT(15, KC_A)
+#define DUAL_FUNC_17 LT(5, KC_9)
+#define DUAL_FUNC_18 LT(7, KC_G)
+#define DUAL_FUNC_19 LT(12, KC_F22)
+#define DUAL_FUNC_20 LT(14, KC_7)
+#define DUAL_FUNC_21 LT(9, KC_A)
+#define DUAL_FUNC_22 LT(8, KC_Q)
+#define DUAL_FUNC_23 LT(1, KC_F21)
+#define DUAL_FUNC_24 LT(12, KC_3)
+#define DUAL_FUNC_25 LT(15, KC_H)
+#define DUAL_FUNC_26 LT(6, KC_5)
+#define DUAL_FUNC_27 LT(1, KC_W)
+#define DUAL_FUNC_28 LT(15, KC_F20)
+#define DUAL_FUNC_29 LT(5, KC_Q)
+#define DUAL_FUNC_30 LT(6, KC_A)
+#define DUAL_FUNC_31 LT(4, KC_T)
+#define DUAL_FUNC_32 LT(5, KC_O)
+#define DUAL_FUNC_33 LT(8, KC_F22)
+#define DUAL_FUNC_34 LT(12, KC_F2)
+#define DUAL_FUNC_35 LT(9, KC_8)
+#define DUAL_FUNC_36 LT(8, KC_F1)
+#define DUAL_FUNC_37 LT(6, KC_S)
+#define DUAL_FUNC_38 LT(12, KC_W)
+#define DUAL_FUNC_39 LT(3, KC_C)
+#define DUAL_FUNC_40 LT(10, KC_Z)
+#define DUAL_FUNC_41 LT(8, KC_9)
+#define DUAL_FUNC_42 LT(4, KC_E)
+#define DUAL_FUNC_43 LT(8, KC_T)
+#define DUAL_FUNC_44 LT(8, KC_V)
+#define DUAL_FUNC_45 LT(6, KC_Q)
+#define DUAL_FUNC_46 LT(13, KC_V)
+#define DUAL_FUNC_47 LT(14, KC_F6)
+#define DUAL_FUNC_48 LT(10, KC_F18)
+#define DUAL_FUNC_49 LT(2, KC_F11)
+#define DUAL_FUNC_50 LT(3, KC_F3)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -176,12 +176,12 @@ const uint16_t PROGMEM combo1[] = { KC_X, KC_F19, COMBO_END};
 const uint16_t PROGMEM combo2[] = { KC_F5, KC_F, COMBO_END};
 const uint16_t PROGMEM combo3[] = { KC_8, KC_F16, COMBO_END};
 const uint16_t PROGMEM combo4[] = { KC_F, KC_F8, COMBO_END};
-const uint16_t PROGMEM combo5[] = { KC_C, KC_F9, COMBO_END};
-const uint16_t PROGMEM combo6[] = { KC_F15, KC_D, COMBO_END};
-const uint16_t PROGMEM combo7[] = { KC_F7, KC_T, COMBO_END};
-const uint16_t PROGMEM combo8[] = { KC_X, KC_F17, COMBO_END};
-const uint16_t PROGMEM combo9[] = { KC_U, KC_F24, COMBO_END};
-const uint16_t PROGMEM combo10[] = { KC_F19, KC_1, COMBO_END};
+const uint16_t PROGMEM combo5[] = { KC_C, KC_F8, COMBO_END};
+const uint16_t PROGMEM combo6[] = { KC_F15, KC_8, COMBO_END};
+const uint16_t PROGMEM combo7[] = { KC_F7, KC_F, COMBO_END};
+const uint16_t PROGMEM combo8[] = { KC_X, KC_F16, COMBO_END};
+const uint16_t PROGMEM combo9[] = { KC_U, KC_F5, COMBO_END};
+const uint16_t PROGMEM combo10[] = { KC_F19, KC_6, COMBO_END};
 const uint16_t PROGMEM combo11[] = { KC_T, KC_F9, COMBO_END};
 const uint16_t PROGMEM combo12[] = { KC_F12, KC_4, COMBO_END};
 const uint16_t PROGMEM combo13[] = { KC_4, KC_F13, COMBO_END};
@@ -195,12 +195,14 @@ const uint16_t PROGMEM combo20[] = { KC_O, KC_F1, COMBO_END};
 const uint16_t PROGMEM combo21[] = { KC_F22, KC_I, COMBO_END};
 const uint16_t PROGMEM combo22[] = { KC_F17, KC_1, COMBO_END};
 const uint16_t PROGMEM combo23[] = { KC_F24, KC_T, COMBO_END};
-const uint16_t PROGMEM combo24[] = { KC_F8, KC_C, COMBO_END};
-const uint16_t PROGMEM combo25[] = { KC_8, KC_F15, COMBO_END};
-const uint16_t PROGMEM combo26[] = { KC_F, KC_F7, COMBO_END};
-const uint16_t PROGMEM combo27[] = { KC_F16, KC_X, COMBO_END};
-const uint16_t PROGMEM combo28[] = { KC_6, KC_F19, COMBO_END};
-const uint16_t PROGMEM combo29[] = { KC_F5, KC_U, COMBO_END};
+const uint16_t PROGMEM combo24[] = { KC_C, KC_F9, COMBO_END};
+const uint16_t PROGMEM combo25[] = { KC_F15, KC_D, COMBO_END};
+const uint16_t PROGMEM combo26[] = { KC_F7, KC_T, COMBO_END};
+const uint16_t PROGMEM combo27[] = { KC_X, KC_F17, COMBO_END};
+const uint16_t PROGMEM combo28[] = { KC_F19, KC_1, COMBO_END};
+const uint16_t PROGMEM combo29[] = { KC_U, KC_F24, COMBO_END};
+const uint16_t PROGMEM combo30[] = { KC_F4, KC_V, COMBO_END};
+const uint16_t PROGMEM combo31[] = { KC_DOT, KC_F21, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, CW_TOGG),
@@ -233,6 +235,8 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo27, OSL(8)),
     COMBO(combo28, OSL(4)),
     COMBO(combo29, OSL(3)),
+    COMBO(combo30, OSL(5)),
+    COMBO(combo31, OSL(6)),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
