@@ -31,25 +31,25 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(4, KC_F22)
-#define DUAL_FUNC_1 LT(12, KC_9)
-#define DUAL_FUNC_2 LT(6, KC_F3)
-#define DUAL_FUNC_3 LT(14, KC_F13)
-#define DUAL_FUNC_4 LT(1, KC_0)
-#define DUAL_FUNC_5 LT(14, KC_F24)
-#define DUAL_FUNC_6 LT(6, KC_F12)
-#define DUAL_FUNC_7 LT(8, KC_B)
-#define DUAL_FUNC_8 LT(4, KC_F23)
-#define DUAL_FUNC_9 LT(1, KC_Z)
-#define DUAL_FUNC_10 LT(8, KC_F10)
-#define DUAL_FUNC_11 LT(14, KC_2)
-#define DUAL_FUNC_12 LT(2, KC_F6)
-#define DUAL_FUNC_13 LT(15, KC_K)
-#define DUAL_FUNC_14 LT(8, KC_S)
-#define DUAL_FUNC_15 LT(15, KC_F14)
-#define DUAL_FUNC_16 LT(14, KC_I)
-#define DUAL_FUNC_17 LT(10, KC_F24)
-#define DUAL_FUNC_18 LT(11, KC_F)
+#define DUAL_FUNC_0 LT(7, KC_K)
+#define DUAL_FUNC_1 LT(11, KC_F17)
+#define DUAL_FUNC_2 LT(14, KC_L)
+#define DUAL_FUNC_3 LT(11, KC_F12)
+#define DUAL_FUNC_4 LT(11, KC_V)
+#define DUAL_FUNC_5 LT(3, KC_2)
+#define DUAL_FUNC_6 LT(9, KC_F11)
+#define DUAL_FUNC_7 LT(6, KC_1)
+#define DUAL_FUNC_8 LT(2, KC_1)
+#define DUAL_FUNC_9 LT(3, KC_Y)
+#define DUAL_FUNC_10 LT(15, KC_D)
+#define DUAL_FUNC_11 LT(1, KC_F20)
+#define DUAL_FUNC_12 LT(10, KC_Y)
+#define DUAL_FUNC_13 LT(10, KC_S)
+#define DUAL_FUNC_14 LT(6, KC_R)
+#define DUAL_FUNC_15 LT(15, KC_F4)
+#define DUAL_FUNC_16 LT(4, KC_T)
+#define DUAL_FUNC_17 LT(14, KC_K)
+#define DUAL_FUNC_18 LT(6, KC_F7)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -68,9 +68,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_MS_WH_LEFT,  KC_MS_WH_UP,    KC_MS_WH_DOWN,  KC_MS_WH_RIGHT, DUAL_FUNC_0,                                    KC_TRANSPARENT, KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_UP,       KC_MS_RIGHT,    KC_TRANSPARENT, 
-    KC_TRANSPARENT, DUAL_FUNC_1,    DUAL_FUNC_2,    MT(MOD_LCTL, KC_MS_BTN2),MT(MOD_LSFT, KC_MS_BTN1),DUAL_FUNC_3,                                    KC_APPLICATION, KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_TRANSPARENT, 
-    KC_TRANSPARENT, LCTL(KC_Z),     DUAL_FUNC_4,    DUAL_FUNC_5,    KC_MS_DBL_CLICK,DUAL_FUNC_6,                                    KC_MS_BTN1,     DUAL_FUNC_7,    KC_PGDN,        KC_PAGE_UP,     DUAL_FUNC_8,    KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_MS_WH_LEFT,  KC_MS_WH_UP,    KC_MS_WH_DOWN,  KC_MS_WH_RIGHT, DUAL_FUNC_0,                                    KC_PAGE_UP,     DUAL_FUNC_7,    KC_UP,          DUAL_FUNC_8,    KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, DUAL_FUNC_1,    DUAL_FUNC_2,    MT(MOD_LCTL, KC_MS_BTN2),MT(MOD_LSFT, KC_MS_BTN1),DUAL_FUNC_3,                                    KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_APPLICATION, KC_TRANSPARENT, 
+    KC_TRANSPARENT, LCTL(KC_Z),     DUAL_FUNC_4,    DUAL_FUNC_5,    KC_MS_DBL_CLICK,DUAL_FUNC_6,                                    KC_MS_DBL_CLICK,KC_MS_BTN1,     KC_MS_WH_DOWN,  KC_MS_WH_UP,    KC_MS_BTN2,     KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [3] = LAYOUT_voyager(
