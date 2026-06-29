@@ -26,15 +26,15 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(1, KC_F10)
-#define DUAL_FUNC_1 LT(9, KC_7)
-#define DUAL_FUNC_2 LT(7, KC_R)
-#define DUAL_FUNC_3 LT(3, KC_0)
-#define DUAL_FUNC_4 LT(3, KC_F4)
-#define DUAL_FUNC_5 LT(10, KC_9)
-#define DUAL_FUNC_6 LT(8, KC_I)
-#define DUAL_FUNC_7 LT(2, KC_F5)
-#define DUAL_FUNC_8 LT(5, KC_F23)
+#define DUAL_FUNC_0 LT(9, KC_F23)
+#define DUAL_FUNC_1 LT(12, KC_P)
+#define DUAL_FUNC_2 LT(1, KC_F24)
+#define DUAL_FUNC_3 LT(10, KC_R)
+#define DUAL_FUNC_4 LT(1, KC_F16)
+#define DUAL_FUNC_5 LT(13, KC_F6)
+#define DUAL_FUNC_6 LT(14, KC_O)
+#define DUAL_FUNC_7 LT(6, KC_W)
+#define DUAL_FUNC_8 LT(2, KC_6)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, LALT(KC_F4),    KC_MS_DBL_CLICK,KC_TRANSPARENT, DUAL_FUNC_2,                                    DUAL_FUNC_2,    KC_TRANSPARENT, KC_MS_DBL_CLICK,LALT(KC_F4),    KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_WH_LEFT,  KC_MS_DBL_CLICK,KC_MS_WH_RIGHT, DUAL_FUNC_2,                                    DUAL_FUNC_2,    KC_MS_WH_LEFT,  KC_MS_DBL_CLICK,KC_MS_WH_RIGHT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_MS_BTN2,     KC_MS_WH_UP,    KC_MS_WH_DOWN,  KC_MS_BTN1,     DUAL_FUNC_3,                                    DUAL_FUNC_3,    KC_MS_BTN1,     KC_MS_WH_DOWN,  KC_MS_WH_UP,    KC_MS_BTN2,     KC_TRANSPARENT, 
     KC_TRANSPARENT, LCTL(KC_Z),     LCTL(KC_X),     LCTL(KC_C),     DUAL_FUNC_4,    DUAL_FUNC_5,                                    DUAL_FUNC_5,    DUAL_FUNC_4,    LCTL(KC_C),     LCTL(KC_X),     LCTL(KC_Z),     KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 DUAL_FUNC_6,    KC_TRANSPARENT
