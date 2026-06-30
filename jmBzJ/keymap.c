@@ -32,20 +32,20 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(13, KC_F6)
-#define DUAL_FUNC_1 LT(4, KC_Q)
-#define DUAL_FUNC_2 LT(1, KC_P)
-#define DUAL_FUNC_3 LT(8, KC_X)
-#define DUAL_FUNC_4 LT(9, KC_F21)
-#define DUAL_FUNC_5 LT(3, KC_1)
-#define DUAL_FUNC_6 LT(5, KC_F11)
-#define DUAL_FUNC_7 LT(8, KC_G)
-#define DUAL_FUNC_8 LT(11, KC_F21)
+#define DUAL_FUNC_0 LT(6, KC_E)
+#define DUAL_FUNC_1 LT(7, KC_F3)
+#define DUAL_FUNC_2 LT(4, KC_J)
+#define DUAL_FUNC_3 LT(7, KC_M)
+#define DUAL_FUNC_4 LT(2, KC_F)
+#define DUAL_FUNC_5 LT(12, KC_F18)
+#define DUAL_FUNC_6 LT(13, KC_W)
+#define DUAL_FUNC_7 LT(1, KC_F19)
+#define DUAL_FUNC_8 LT(4, KC_F24)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_LEFT_GUI,    KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_J,           KC_L,           KC_U,           KC_Y,           KC_TRANSPARENT, KC_LEFT_GUI,    
+    KC_LEFT_SHIFT,  KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_J,           KC_L,           KC_U,           KC_Y,           KC_TRANSPARENT, KC_LEFT_SHIFT,  
     DUAL_FUNC_0,    LT(6, KC_A),    MT(MOD_LALT, KC_R),MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,                                           KC_M,           MT(MOD_LSFT, KC_N),MT(MOD_LCTL, KC_E),MT(MOD_LALT, KC_I),LT(6, KC_O),    DUAL_FUNC_0,    
     KC_LEFT_CTRL,   KC_Z,           KC_X,           KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       KC_DOT,         CW_TOGG,        KC_LEFT_CTRL,   
                                                     DUAL_FUNC_1,    OSL(5),                                         KC_TRANSPARENT, LT(4, KC_SPACE)
@@ -383,9 +383,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_code16(KC_LEFT_SHIFT);
+          register_code16(KC_LEFT_GUI);
         } else {
-          unregister_code16(KC_LEFT_SHIFT);
+          unregister_code16(KC_LEFT_GUI);
         }  
       }  
       return false;
