@@ -26,22 +26,20 @@ enum custom_keycodes {
   ST_MACRO_10,
   ST_MACRO_11,
   ST_MACRO_12,
-  ST_MACRO_13,
-  ST_MACRO_14,
 };
 
 
 
-#define DUAL_FUNC_0 LT(8, KC_L)
-#define DUAL_FUNC_1 LT(15, KC_I)
-#define DUAL_FUNC_2 LT(14, KC_P)
-#define DUAL_FUNC_3 LT(2, KC_3)
-#define DUAL_FUNC_4 LT(4, KC_0)
-#define DUAL_FUNC_5 LT(6, KC_G)
-#define DUAL_FUNC_6 LT(15, KC_J)
-#define DUAL_FUNC_7 LT(5, KC_X)
-#define DUAL_FUNC_8 LT(6, KC_3)
-#define DUAL_FUNC_9 LT(14, KC_F8)
+#define DUAL_FUNC_0 LT(7, KC_L)
+#define DUAL_FUNC_1 LT(9, KC_N)
+#define DUAL_FUNC_2 LT(2, KC_1)
+#define DUAL_FUNC_3 LT(11, KC_G)
+#define DUAL_FUNC_4 LT(14, KC_M)
+#define DUAL_FUNC_5 LT(3, KC_D)
+#define DUAL_FUNC_6 LT(11, KC_6)
+#define DUAL_FUNC_7 LT(10, KC_6)
+#define DUAL_FUNC_8 LT(11, KC_Y)
+#define DUAL_FUNC_9 LT(1, KC_P)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -125,8 +123,8 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 );
 
 const uint16_t PROGMEM combo0[] = { KC_F16, KC_6, COMBO_END};
-const uint16_t PROGMEM combo1[] = { KC_F5, KC_F, COMBO_END};
-const uint16_t PROGMEM combo2[] = { KC_8, KC_F16, COMBO_END};
+const uint16_t PROGMEM combo1[] = { KC_8, KC_F16, COMBO_END};
+const uint16_t PROGMEM combo2[] = { KC_F5, KC_F, COMBO_END};
 const uint16_t PROGMEM combo3[] = { KC_F, KC_F8, COMBO_END};
 const uint16_t PROGMEM combo4[] = { KC_F12, KC_4, COMBO_END};
 const uint16_t PROGMEM combo5[] = { KC_4, KC_F13, COMBO_END};
@@ -159,8 +157,8 @@ const uint16_t PROGMEM combo30[] = { KC_R, KC_P, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_BSPC),
     COMBO(combo1, LCTL(KC_BSPC)),
-    COMBO(combo2, ST_MACRO_13),
-    COMBO(combo3, ST_MACRO_14),
+    COMBO(combo2, KC_BSPC),
+    COMBO(combo3, LCTL(KC_BSPC)),
     COMBO(combo4, KC_AUDIO_VOL_UP),
     COMBO(combo5, KC_AUDIO_VOL_DOWN),
     COMBO(combo6, LALT(LGUI(KC_K))),
@@ -396,16 +394,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ST_MACRO_12:
     if (record->event.pressed) {
       SEND_STRING(SS_LALT(SS_LCTL(SS_TAP(X_HOME)))SS_DELAY(50)  SS_TAP(X_TAB)SS_DELAY(50)  SS_TAP(X_TAB)  SS_DELAY(50) SS_TAP(X_ENTER));
-    }
-    break;
-    case ST_MACRO_13:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_BSPC)SS_DELAY(50)  SS_TAP(X_BSPC));
-    }
-    break;
-    case ST_MACRO_14:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_BSPC)SS_DELAY(50)  SS_TAP(X_BSPC)SS_DELAY(50)  SS_TAP(X_BSPC));
     }
     break;
 
