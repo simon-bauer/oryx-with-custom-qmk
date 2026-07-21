@@ -26,20 +26,22 @@ enum custom_keycodes {
   ST_MACRO_10,
   ST_MACRO_11,
   ST_MACRO_12,
+  ST_MACRO_13,
+  ST_MACRO_14,
 };
 
 
 
-#define DUAL_FUNC_0 LT(9, KC_P)
-#define DUAL_FUNC_1 LT(3, KC_F11)
-#define DUAL_FUNC_2 LT(1, KC_2)
-#define DUAL_FUNC_3 LT(14, KC_J)
-#define DUAL_FUNC_4 LT(2, KC_F18)
-#define DUAL_FUNC_5 LT(7, KC_X)
-#define DUAL_FUNC_6 LT(14, KC_C)
-#define DUAL_FUNC_7 LT(13, KC_F6)
-#define DUAL_FUNC_8 LT(9, KC_B)
-#define DUAL_FUNC_9 LT(6, KC_4)
+#define DUAL_FUNC_0 LT(15, KC_R)
+#define DUAL_FUNC_1 LT(8, KC_P)
+#define DUAL_FUNC_2 LT(8, KC_7)
+#define DUAL_FUNC_3 LT(7, KC_2)
+#define DUAL_FUNC_4 LT(14, KC_J)
+#define DUAL_FUNC_5 LT(12, KC_R)
+#define DUAL_FUNC_6 LT(7, KC_3)
+#define DUAL_FUNC_7 LT(8, KC_K)
+#define DUAL_FUNC_8 LT(9, KC_V)
+#define DUAL_FUNC_9 LT(13, KC_F5)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -161,6 +163,8 @@ const uint16_t PROGMEM combo28[] = { KC_U, KC_F24, COMBO_END};
 const uint16_t PROGMEM combo29[] = { KC_F19, KC_1, COMBO_END};
 const uint16_t PROGMEM combo30[] = { KC_P, KC_F21, COMBO_END};
 const uint16_t PROGMEM combo31[] = { KC_R, KC_V, COMBO_END};
+const uint16_t PROGMEM combo32[] = { KC_F5, KC_F, KC_F8, COMBO_END};
+const uint16_t PROGMEM combo33[] = { KC_8, KC_F16, KC_6, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_BSPC),
@@ -195,6 +199,8 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo29, LCTL(KC_A)),
     COMBO(combo30, CW_TOGG),
     COMBO(combo31, CW_TOGG),
+    COMBO(combo32, ST_MACRO_13),
+    COMBO(combo33, ST_MACRO_14),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
@@ -403,6 +409,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ST_MACRO_12:
     if (record->event.pressed) {
       SEND_STRING(SS_LALT(SS_LCTL(SS_TAP(X_HOME)))SS_DELAY(50)  SS_TAP(X_TAB)SS_DELAY(50)  SS_TAP(X_TAB)  SS_DELAY(50) SS_TAP(X_ENTER));
+    }
+    break;
+    case ST_MACRO_13:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_BSPC)SS_DELAY(50)  SS_TAP(X_BSPC));
+    }
+    break;
+    case ST_MACRO_14:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_BSPC)SS_DELAY(50)  SS_TAP(X_BSPC));
     }
     break;
 
