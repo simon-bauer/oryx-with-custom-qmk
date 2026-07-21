@@ -32,16 +32,16 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(15, KC_R)
-#define DUAL_FUNC_1 LT(8, KC_P)
-#define DUAL_FUNC_2 LT(8, KC_7)
-#define DUAL_FUNC_3 LT(7, KC_2)
-#define DUAL_FUNC_4 LT(14, KC_J)
-#define DUAL_FUNC_5 LT(12, KC_R)
-#define DUAL_FUNC_6 LT(7, KC_3)
-#define DUAL_FUNC_7 LT(8, KC_K)
-#define DUAL_FUNC_8 LT(9, KC_V)
-#define DUAL_FUNC_9 LT(13, KC_F5)
+#define DUAL_FUNC_0 LT(8, KC_N)
+#define DUAL_FUNC_1 LT(4, KC_3)
+#define DUAL_FUNC_2 LT(3, KC_Y)
+#define DUAL_FUNC_3 LT(9, KC_F15)
+#define DUAL_FUNC_4 LT(15, KC_1)
+#define DUAL_FUNC_5 LT(4, KC_A)
+#define DUAL_FUNC_6 LT(13, KC_4)
+#define DUAL_FUNC_7 LT(4, KC_F22)
+#define DUAL_FUNC_8 LT(11, KC_T)
+#define DUAL_FUNC_9 LT(2, KC_7)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -132,9 +132,9 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 );
 
 const uint16_t PROGMEM combo0[] = { KC_F16, KC_6, COMBO_END};
-const uint16_t PROGMEM combo1[] = { KC_8, KC_F16, COMBO_END};
+const uint16_t PROGMEM combo1[] = { KC_8, KC_F16, KC_6, COMBO_END};
 const uint16_t PROGMEM combo2[] = { KC_F5, KC_F, COMBO_END};
-const uint16_t PROGMEM combo3[] = { KC_F, KC_F8, COMBO_END};
+const uint16_t PROGMEM combo3[] = { KC_F, KC_F8, KC_F5, COMBO_END};
 const uint16_t PROGMEM combo4[] = { KC_F12, KC_4, COMBO_END};
 const uint16_t PROGMEM combo5[] = { KC_4, KC_F13, COMBO_END};
 const uint16_t PROGMEM combo6[] = { KC_F12, KC_8, COMBO_END};
@@ -163,8 +163,10 @@ const uint16_t PROGMEM combo28[] = { KC_U, KC_F24, COMBO_END};
 const uint16_t PROGMEM combo29[] = { KC_F19, KC_1, COMBO_END};
 const uint16_t PROGMEM combo30[] = { KC_P, KC_F21, COMBO_END};
 const uint16_t PROGMEM combo31[] = { KC_R, KC_V, COMBO_END};
-const uint16_t PROGMEM combo32[] = { KC_F5, KC_F, KC_F8, COMBO_END};
-const uint16_t PROGMEM combo33[] = { KC_8, KC_F16, KC_6, COMBO_END};
+const uint16_t PROGMEM combo32[] = { KC_F, KC_F8, COMBO_END};
+const uint16_t PROGMEM combo33[] = { KC_8, KC_F16, COMBO_END};
+const uint16_t PROGMEM combo34[] = { KC_D, KC_F17, KC_1, COMBO_END};
+const uint16_t PROGMEM combo35[] = { KC_F24, KC_T, KC_F9, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_BSPC),
@@ -201,6 +203,8 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo31, CW_TOGG),
     COMBO(combo32, ST_MACRO_13),
     COMBO(combo33, ST_MACRO_14),
+    COMBO(combo34, LCTL(KC_DELETE)),
+    COMBO(combo35, LCTL(KC_DELETE)),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
