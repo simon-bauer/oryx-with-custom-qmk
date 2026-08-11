@@ -39,16 +39,16 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(10, KC_T)
-#define DUAL_FUNC_1 LT(6, KC_V)
-#define DUAL_FUNC_2 LT(3, KC_F1)
-#define DUAL_FUNC_3 LT(6, KC_F)
-#define DUAL_FUNC_4 LT(1, KC_F17)
-#define DUAL_FUNC_5 LT(2, KC_6)
-#define DUAL_FUNC_6 LT(7, KC_Y)
-#define DUAL_FUNC_7 LT(5, KC_4)
-#define DUAL_FUNC_8 LT(9, KC_U)
-#define DUAL_FUNC_9 LT(7, KC_O)
+#define DUAL_FUNC_0 LT(4, KC_T)
+#define DUAL_FUNC_1 LT(2, KC_X)
+#define DUAL_FUNC_2 LT(1, KC_J)
+#define DUAL_FUNC_3 LT(13, KC_J)
+#define DUAL_FUNC_4 LT(3, KC_H)
+#define DUAL_FUNC_5 LT(3, KC_F14)
+#define DUAL_FUNC_6 LT(2, KC_P)
+#define DUAL_FUNC_7 LT(1, KC_3)
+#define DUAL_FUNC_8 LT(8, KC_F19)
+#define DUAL_FUNC_9 LT(4, KC_F10)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -169,14 +169,6 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo2, OSL(10)),
 };
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(6, KC_SPACE):
-            return TAPPING_TERM -50;
-        default:
-            return TAPPING_TERM;
-    }
-}
 
 
 extern rgb_config_t rgb_matrix_config;
