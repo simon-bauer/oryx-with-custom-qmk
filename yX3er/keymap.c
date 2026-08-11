@@ -39,16 +39,16 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(7, KC_F7)
-#define DUAL_FUNC_1 LT(2, KC_F13)
-#define DUAL_FUNC_2 LT(8, KC_D)
-#define DUAL_FUNC_3 LT(10, KC_F17)
-#define DUAL_FUNC_4 LT(11, KC_F7)
-#define DUAL_FUNC_5 LT(1, KC_F16)
-#define DUAL_FUNC_6 LT(5, KC_F1)
-#define DUAL_FUNC_7 LT(2, KC_D)
-#define DUAL_FUNC_8 LT(3, KC_F5)
-#define DUAL_FUNC_9 LT(5, KC_F24)
+#define DUAL_FUNC_0 LT(3, KC_F6)
+#define DUAL_FUNC_1 LT(5, KC_1)
+#define DUAL_FUNC_2 LT(1, KC_4)
+#define DUAL_FUNC_3 LT(1, KC_A)
+#define DUAL_FUNC_4 LT(10, KC_W)
+#define DUAL_FUNC_5 LT(7, KC_F11)
+#define DUAL_FUNC_6 LT(11, KC_K)
+#define DUAL_FUNC_7 LT(5, KC_9)
+#define DUAL_FUNC_8 LT(14, KC_8)
+#define DUAL_FUNC_9 LT(11, KC_F22)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [1] = LAYOUT_voyager(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_5,           KC_4,           KC_3,           KC_2,           KC_1,           KC_ESCAPE,      
-    KC_TAB,         KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_B,           KC_P,           KC_F,           KC_W,           KC_Q,           KC_TAB,         
+    KC_TAB,         KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_B,           KC_P,           KC_F1,          KC_F2,          KC_Q,           KC_TAB,         
     KC_BSPC,        KC_A,           KC_R,           KC_S,           KC_T,           KC_G,                                           KC_G,           KC_T,           KC_S,           KC_R,           KC_A,           KC_BSPC,        
     KC_DELETE,      KC_Z,           KC_X,           KC_C,           KC_D,           KC_V,                                           KC_V,           KC_D,           KC_C,           KC_X,           KC_Z,           KC_DELETE,      
                                                     KC_SPACE,       KC_ENTER,                                       KC_ENTER,       KC_SPACE
@@ -136,8 +136,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     LM(12,MOD_LCTL),KC_TRANSPARENT,                                 KC_TRANSPARENT, LM(12,MOD_LCTL)
   ),
   [12] = LAYOUT_voyager(
-    TO(0),          KC_TRANSPARENT, LCTL(LSFT(KC_TAB)),LCTL(KC_TAB),   DUAL_FUNC_9,    KC_TRANSPARENT,                                 KC_TRANSPARENT, DUAL_FUNC_9,    LCTL(KC_TAB),   LCTL(LSFT(KC_TAB)),KC_TRANSPARENT, TO(0),          
-    KC_TRANSPARENT, KC_TRANSPARENT, LSFT(KC_TAB),   KC_TAB,         LCTL(KC_BSPC),  TO(0),                                          TO(0),          LCTL(KC_BSPC),  KC_TAB,         LSFT(KC_TAB),   KC_TRANSPARENT, KC_TRANSPARENT, 
+    TO(0),          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LALT(LCTL(KC_TAB)),KC_TRANSPARENT,                                 KC_TRANSPARENT, LALT(LCTL(KC_TAB)),KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, TO(0),          
+    KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_TAB),   KC_TAB,         DUAL_FUNC_9,    TO(0),                                          TO(0),          DUAL_FUNC_9,    KC_TAB,         LCTL(KC_TAB),   KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_24,    ST_MACRO_25,    KC_BSPC,        KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_BSPC,        ST_MACRO_26,    ST_MACRO_27,    KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
@@ -163,12 +163,16 @@ const uint16_t PROGMEM combo0[] = { KC_DELETE, KC_Z, COMBO_END};
 const uint16_t PROGMEM combo1[] = { KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM combo2[] = { KC_R, KC_S, COMBO_END};
 const uint16_t PROGMEM combo3[] = { KC_2, KC_3, COMBO_END};
+const uint16_t PROGMEM combo4[] = { KC_F1, KC_F2, COMBO_END};
+const uint16_t PROGMEM combo5[] = { KC_F, KC_F1, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, LALT(LGUI(KC_K))),
     COMBO(combo1, KC_ENTER),
     COMBO(combo2, KC_DELETE),
     COMBO(combo3, CW_TOGG),
+    COMBO(combo4, KC_ENTER),
+    COMBO(combo5, LCTL(KC_BSPC)),
 };
 
 
@@ -565,9 +569,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_code16(LALT(LCTL(KC_TAB)));
+          register_code16(KC_LEFT_SHIFT);
         } else {
-          unregister_code16(LALT(LCTL(KC_TAB)));
+          unregister_code16(KC_LEFT_SHIFT);
         }  
       }  
       return false;
