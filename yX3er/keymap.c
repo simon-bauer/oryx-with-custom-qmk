@@ -39,16 +39,16 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(3, KC_F6)
-#define DUAL_FUNC_1 LT(5, KC_1)
-#define DUAL_FUNC_2 LT(1, KC_4)
-#define DUAL_FUNC_3 LT(1, KC_A)
-#define DUAL_FUNC_4 LT(10, KC_W)
-#define DUAL_FUNC_5 LT(7, KC_F11)
-#define DUAL_FUNC_6 LT(11, KC_K)
-#define DUAL_FUNC_7 LT(5, KC_9)
-#define DUAL_FUNC_8 LT(14, KC_8)
-#define DUAL_FUNC_9 LT(11, KC_F22)
+#define DUAL_FUNC_0 LT(1, KC_F23)
+#define DUAL_FUNC_1 LT(2, KC_6)
+#define DUAL_FUNC_2 LT(6, KC_L)
+#define DUAL_FUNC_3 LT(2, KC_5)
+#define DUAL_FUNC_4 LT(1, KC_F14)
+#define DUAL_FUNC_5 LT(6, KC_F22)
+#define DUAL_FUNC_6 LT(14, KC_F2)
+#define DUAL_FUNC_7 LT(5, KC_R)
+#define DUAL_FUNC_8 LT(10, KC_E)
+#define DUAL_FUNC_9 LT(9, KC_F24)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [1] = LAYOUT_voyager(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_5,           KC_4,           KC_3,           KC_2,           KC_1,           KC_ESCAPE,      
-    KC_TAB,         KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_B,           KC_P,           KC_F1,          KC_F2,          KC_Q,           KC_TAB,         
+    KC_TAB,         KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_B,           KC_P,           KC_F,           KC_W,           KC_Q,           KC_TAB,         
     KC_BSPC,        KC_A,           KC_R,           KC_S,           KC_T,           KC_G,                                           KC_G,           KC_T,           KC_S,           KC_R,           KC_A,           KC_BSPC,        
     KC_DELETE,      KC_Z,           KC_X,           KC_C,           KC_D,           KC_V,                                           KC_V,           KC_D,           KC_C,           KC_X,           KC_Z,           KC_DELETE,      
                                                     KC_SPACE,       KC_ENTER,                                       KC_ENTER,       KC_SPACE
@@ -162,17 +162,15 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 const uint16_t PROGMEM combo0[] = { KC_DELETE, KC_Z, COMBO_END};
 const uint16_t PROGMEM combo1[] = { KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM combo2[] = { KC_R, KC_S, COMBO_END};
-const uint16_t PROGMEM combo3[] = { KC_2, KC_3, COMBO_END};
-const uint16_t PROGMEM combo4[] = { KC_F1, KC_F2, COMBO_END};
-const uint16_t PROGMEM combo5[] = { KC_F, KC_F1, COMBO_END};
+const uint16_t PROGMEM combo3[] = { KC_3, KC_4, COMBO_END};
+const uint16_t PROGMEM combo4[] = { KC_2, KC_3, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, LALT(LGUI(KC_K))),
     COMBO(combo1, KC_ENTER),
     COMBO(combo2, KC_DELETE),
     COMBO(combo3, CW_TOGG),
-    COMBO(combo4, KC_ENTER),
-    COMBO(combo5, LCTL(KC_BSPC)),
+    COMBO(combo4, LCTL(KC_BSPC)),
 };
 
 
