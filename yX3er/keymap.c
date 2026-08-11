@@ -39,16 +39,16 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(9, KC_L)
-#define DUAL_FUNC_1 LT(15, KC_T)
-#define DUAL_FUNC_2 LT(9, KC_F11)
-#define DUAL_FUNC_3 LT(1, KC_F24)
-#define DUAL_FUNC_4 LT(10, KC_D)
-#define DUAL_FUNC_5 LT(10, KC_E)
-#define DUAL_FUNC_6 LT(3, KC_F8)
-#define DUAL_FUNC_7 LT(9, KC_F9)
-#define DUAL_FUNC_8 LT(10, KC_F15)
-#define DUAL_FUNC_9 LT(10, KC_2)
+#define DUAL_FUNC_0 LT(7, KC_F7)
+#define DUAL_FUNC_1 LT(2, KC_F13)
+#define DUAL_FUNC_2 LT(8, KC_D)
+#define DUAL_FUNC_3 LT(10, KC_F17)
+#define DUAL_FUNC_4 LT(11, KC_F7)
+#define DUAL_FUNC_5 LT(1, KC_F16)
+#define DUAL_FUNC_6 LT(5, KC_F1)
+#define DUAL_FUNC_7 LT(2, KC_D)
+#define DUAL_FUNC_8 LT(3, KC_F5)
+#define DUAL_FUNC_9 LT(5, KC_F24)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     DUAL_FUNC_1,    LT(12, KC_A),   LT(7, KC_R),    MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,                                           KC_M,           MT(MOD_LSFT, KC_N),MT(MOD_LCTL, KC_E),LT(7, KC_I),    LT(12, KC_O),   DUAL_FUNC_1,    
     KC_LEFT_CTRL,   OSL(11),        MT(MOD_LALT, KC_X),KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       MT(MOD_LALT, KC_DOT),OSL(11),        KC_LEFT_CTRL,   
     KC_AUDIO_VOL_UP,KC_AUDIO_VOL_DOWN,LGUI(LSFT(KC_S)),OSL(10),        OSL(9),         LT(6, KC_SPACE),                                LT(6, KC_SPACE),OSL(9),         OSL(10),        LGUI(LSFT(KC_S)),KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,
-                                                    OSL(8),         KC_ESCAPE,                                      KC_ESCAPE,      OSL(8)
+                                                    OSL(8),         MEH_T(KC_ESCAPE),                                MEH_T(KC_ESCAPE),OSL(8)
   ),
   [1] = LAYOUT_voyager(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_5,           KC_4,           KC_3,           KC_2,           KC_1,           KC_ESCAPE,      
