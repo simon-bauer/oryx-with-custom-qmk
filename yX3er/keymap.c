@@ -6,7 +6,7 @@
 #endif
 
 const int MAIN_LAYER = 0;
-const int MAIN_LAYER_TIMEOUT_MS = 2000;
+const int MAIN_LAYER_TIMEOUT_MS = 1700;
 uint8_t previous_layer = 0;
 
 uint32_t turn_main_layer_off_after_timeout(uint32_t trigger_time, void *cb_arg)
