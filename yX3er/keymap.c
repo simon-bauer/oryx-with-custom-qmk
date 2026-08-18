@@ -60,16 +60,16 @@ enum tap_dance_codes {
   DANCE_17,
 };
 
-#define DUAL_FUNC_0 LT(14, KC_Y)
-#define DUAL_FUNC_1 LT(3, KC_F9)
-#define DUAL_FUNC_2 LT(8, KC_F19)
-#define DUAL_FUNC_3 LT(1, KC_D)
-#define DUAL_FUNC_4 LT(5, KC_9)
-#define DUAL_FUNC_5 LT(8, KC_F8)
-#define DUAL_FUNC_6 LT(14, KC_M)
-#define DUAL_FUNC_7 LT(6, KC_W)
-#define DUAL_FUNC_8 LT(4, KC_F22)
-#define DUAL_FUNC_9 LT(5, KC_Y)
+#define DUAL_FUNC_0 LT(2, KC_F9)
+#define DUAL_FUNC_1 LT(8, KC_7)
+#define DUAL_FUNC_2 LT(3, KC_F19)
+#define DUAL_FUNC_3 LT(1, KC_F10)
+#define DUAL_FUNC_4 LT(3, KC_L)
+#define DUAL_FUNC_5 LT(5, KC_2)
+#define DUAL_FUNC_6 LT(4, KC_A)
+#define DUAL_FUNC_7 LT(15, KC_F11)
+#define DUAL_FUNC_8 LT(5, KC_F12)
+#define DUAL_FUNC_9 LT(11, KC_3)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -102,8 +102,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [4] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, DUAL_FUNC_3,    KC_UP,          DUAL_FUNC_4,    KC_PAGE_UP,                                     KC_PAGE_UP,     DUAL_FUNC_4,    KC_UP,          DUAL_FUNC_3,    KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, LT(9, KC_APPLICATION),KC_LEFT,        MT(MOD_LCTL, KC_DOWN),MT(MOD_LSFT, KC_RIGHT),KC_PGDN,                                        KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       LT(9, KC_APPLICATION),KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, DUAL_FUNC_5,    LCTL(KC_C),     DUAL_FUNC_6,    KC_TRANSPARENT,                                 KC_TRANSPARENT, DUAL_FUNC_6,    LCTL(KC_C),     DUAL_FUNC_5,    KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, LT(9, KC_APPLICATION),KC_LEFT,        MT(MOD_LCTL, KC_ENTER),MT(MOD_LSFT, KC_RIGHT),KC_PGDN,                                        KC_PGDN,        KC_LEFT,        KC_ENTER,       KC_RIGHT,       LT(9, KC_APPLICATION),KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, DUAL_FUNC_5,    KC_DOWN,        LCTL(KC_C),     DUAL_FUNC_6,                                    DUAL_FUNC_6,    LCTL(KC_C),     KC_DOWN,        DUAL_FUNC_5,    KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
@@ -200,7 +200,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
 
     [3] = { {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
 
-    [4] = { {0,0,0}, {0,0,0}, {34,255,255}, {34,255,255}, {34,255,255}, {34,255,255}, {0,0,0}, {34,255,255}, {34,255,255}, {34,255,255}, {34,255,255}, {34,255,255}, {0,0,0}, {0,0,0}, {34,255,255}, {34,255,255}, {34,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {34,255,255}, {34,255,255}, {34,255,255}, {34,255,255}, {0,0,0}, {0,0,0}, {34,255,255}, {34,255,255}, {34,255,255}, {34,255,255}, {34,255,255}, {0,0,0}, {0,0,0}, {34,255,255}, {34,255,255}, {34,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
+    [4] = { {0,0,0}, {0,0,0}, {34,255,255}, {34,255,255}, {34,255,255}, {34,255,255}, {0,0,0}, {34,255,255}, {34,255,255}, {0,0,0}, {34,255,255}, {34,255,255}, {0,0,0}, {0,0,0}, {34,255,255}, {34,255,255}, {34,255,255}, {34,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {34,255,255}, {34,255,255}, {34,255,255}, {34,255,255}, {0,0,0}, {0,0,0}, {34,255,255}, {34,255,255}, {0,0,0}, {34,255,255}, {34,255,255}, {0,0,0}, {34,255,255}, {34,255,255}, {34,255,255}, {34,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
 
     [5] = { {0,0,0}, {0,0,0}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {0,0,0}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {0,0,0}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {0,0,0}, {0,0,0}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {0,0,0}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
 
