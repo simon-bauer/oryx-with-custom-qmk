@@ -70,16 +70,16 @@ enum tap_dance_codes {
   DANCE_17,
 };
 
-#define DUAL_FUNC_0 LT(8, KC_W)
-#define DUAL_FUNC_1 LT(13, KC_9)
-#define DUAL_FUNC_2 LT(8, KC_E)
-#define DUAL_FUNC_3 LT(2, KC_I)
-#define DUAL_FUNC_4 LT(6, KC_U)
-#define DUAL_FUNC_5 LT(2, KC_F15)
-#define DUAL_FUNC_6 LT(8, KC_D)
-#define DUAL_FUNC_7 LT(7, KC_F23)
-#define DUAL_FUNC_8 LT(4, KC_F21)
-#define DUAL_FUNC_9 LT(9, KC_F4)
+#define DUAL_FUNC_0 LT(14, KC_Y)
+#define DUAL_FUNC_1 LT(3, KC_F9)
+#define DUAL_FUNC_2 LT(8, KC_F19)
+#define DUAL_FUNC_3 LT(1, KC_D)
+#define DUAL_FUNC_4 LT(5, KC_9)
+#define DUAL_FUNC_5 LT(8, KC_F8)
+#define DUAL_FUNC_6 LT(14, KC_M)
+#define DUAL_FUNC_7 LT(6, KC_W)
+#define DUAL_FUNC_8 LT(4, KC_F22)
+#define DUAL_FUNC_9 LT(5, KC_Y)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -98,8 +98,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_ACCEL1,   KC_MS_UP,       KC_MS_WH_UP,    KC_MS_WH_LEFT,                                  KC_MS_WH_LEFT,  KC_MS_WH_UP,    KC_MS_UP,       KC_MS_ACCEL1,   KC_Z,           KC_TRANSPARENT, 
-    KC_TRANSPARENT, DUAL_FUNC_2,    KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_MS_BTN2,                                     KC_MS_BTN2,     KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    DUAL_FUNC_2,    KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_DBL_CLICK,KC_MS_BTN1,     KC_MS_WH_DOWN,  KC_MS_WH_RIGHT,                                 KC_MS_WH_RIGHT, KC_MS_WH_DOWN,  KC_MS_BTN1,     KC_MS_DBL_CLICK,KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, DUAL_FUNC_2,    KC_MS_LEFT,     KC_MS_BTN1,     KC_MS_RIGHT,    KC_MS_BTN2,                                     KC_MS_BTN2,     KC_MS_LEFT,     KC_MS_BTN1,     KC_MS_RIGHT,    DUAL_FUNC_2,    KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_DBL_CLICK,KC_MS_DOWN,     KC_MS_WH_DOWN,  KC_MS_WH_RIGHT,                                 KC_MS_WH_RIGHT, KC_MS_WH_DOWN,  KC_MS_DOWN,     KC_MS_DBL_CLICK,KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
