@@ -5,6 +5,15 @@
 #define ZSA_SAFE_RANGE SAFE_RANGE
 #endif
 
+const int MAIN_LAYER = 1;
+const int MAIN_LAYER_TIMEOUT_MS = 1500;
+
+uint32_t turn_main_layer_off_after_timeout(uint32_t trigger_time, void *cb_arg)
+{
+  layer_off(MAIN_LAYER);
+  return 0; // do not repeat
+}
+
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
   ST_MACRO_0,
@@ -940,6 +949,13 @@ tap_dance_action_t tap_dance_actions[] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+  // activates temporarely the main layer
+  case KC_MEDIA_STOP: 
+    if(record->event.pressed) {
+      layer_on(MAIN_LAYER);
+      defer_exec(MAIN_LAYER_TIMEOUT_MS, turn_main_layer_off_after_timeout, NULL)
+    }
+    return false; // handled
   case QK_MODS ... QK_MODS_MAX:
     // Mouse and consumer keys (volume, media) with modifiers work inconsistently across operating systems,
     // this makes sure that modifiers are always applied to the key that was pressed.
