@@ -18,9 +18,9 @@
 
 #define AUTO_SHIFT_MODIFIERS
 #define USB_POLLING_INTERVAL_MS 10
-#define SERIAL_NUMBER "yX3er/ga0Bga"
+#define SERIAL_NUMBER "yX3er/5WMxoe"
 #define LAYER_STATE_16BIT
-#define COMBO_COUNT 9
+#define COMBO_COUNT 8
 
 #define RGB_MATRIX_STARTUP_SPD 60
 
