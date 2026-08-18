@@ -18,7 +18,7 @@
 
 #define AUTO_SHIFT_MODIFIERS
 #define USB_POLLING_INTERVAL_MS 10
-#define SERIAL_NUMBER "yX3er/rbQNv4"
+#define SERIAL_NUMBER "yX3er/ga0Bga"
 #define LAYER_STATE_16BIT
 #define COMBO_COUNT 9
 
