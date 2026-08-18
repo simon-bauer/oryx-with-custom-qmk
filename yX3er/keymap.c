@@ -5,7 +5,7 @@
 #define ZSA_SAFE_RANGE SAFE_RANGE
 #endif
 
-const int MAIN_LAYER = 1;
+const int MAIN_LAYER = 0;
 const int MAIN_LAYER_TIMEOUT_MS = 2000;
 uint8_t previous_layer = 0;
 
