@@ -7,10 +7,11 @@
 
 const int MAIN_LAYER = 1;
 const int MAIN_LAYER_TIMEOUT_MS = 2000;
+uint8_t previous_layer = 0;
 
 uint32_t turn_main_layer_off_after_timeout(uint32_t trigger_time, void *cb_arg)
 {
-  layer_off(MAIN_LAYER);
+  layer_move(previous_layer);
   return 0; // do not repeat
 }
 
@@ -952,7 +953,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // activates temporarely the main layer
   case KC_MEDIA_STOP: 
     if(record->event.pressed) {
-      layer_on(MAIN_LAYER);
+      previous_layer = get_highest_layer(layer_state)
+      layer_move(MAIN_LAYER);
       defer_exec(MAIN_LAYER_TIMEOUT_MS, turn_main_layer_off_after_timeout, NULL);
     }
     return false; // handled
