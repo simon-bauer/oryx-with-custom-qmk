@@ -60,22 +60,22 @@ enum tap_dance_codes {
   DANCE_17,
 };
 
-#define DUAL_FUNC_0 LT(12, KC_U)
-#define DUAL_FUNC_1 LT(5, KC_F5)
-#define DUAL_FUNC_2 LT(9, KC_V)
-#define DUAL_FUNC_3 LT(15, KC_B)
-#define DUAL_FUNC_4 LT(15, KC_F22)
-#define DUAL_FUNC_5 LT(13, KC_J)
-#define DUAL_FUNC_6 LT(13, KC_F16)
-#define DUAL_FUNC_7 LT(5, KC_7)
-#define DUAL_FUNC_8 LT(13, KC_F23)
-#define DUAL_FUNC_9 LT(8, KC_L)
+#define DUAL_FUNC_0 LT(7, KC_B)
+#define DUAL_FUNC_1 LT(4, KC_M)
+#define DUAL_FUNC_2 LT(7, KC_F2)
+#define DUAL_FUNC_3 LT(12, KC_E)
+#define DUAL_FUNC_4 LT(1, KC_U)
+#define DUAL_FUNC_5 LT(8, KC_L)
+#define DUAL_FUNC_6 LT(4, KC_X)
+#define DUAL_FUNC_7 LT(1, KC_9)
+#define DUAL_FUNC_8 LT(7, KC_H)
+#define DUAL_FUNC_9 LT(4, KC_Y)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    DUAL_FUNC_0,    KC_Q,           KC_MS_ACCEL1,   KC_MS_UP,       KC_MS_WH_LEFT,  KC_MS_WH_RIGHT,                                 KC_MS_WH_LEFT,  KC_MS_WH_RIGHT, KC_MS_UP,       KC_MS_ACCEL1,   KC_Z,           DUAL_FUNC_0,    
-    DUAL_FUNC_1,    DUAL_FUNC_2,    KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_MS_DBL_CLICK,                                KC_MS_DBL_CLICK,KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    DUAL_FUNC_2,    DUAL_FUNC_1,    
-    KC_LEFT_CTRL,   OSL(8),         KC_MS_WH_UP,    KC_MS_WH_DOWN,  KC_MS_BTN1,     KC_MS_BTN2,                                     KC_MS_BTN2,     KC_MS_BTN1,     KC_MS_WH_DOWN,  KC_MS_WH_UP,    OSL(8),         KC_LEFT_CTRL,   
+    DUAL_FUNC_0,    KC_Q,           KC_MS_ACCEL1,   KC_MS_UP,       KC_MS_WH_UP,    KC_MS_WH_LEFT,                                  KC_MS_WH_LEFT,  KC_MS_WH_UP,    KC_MS_UP,       KC_MS_ACCEL1,   KC_Z,           DUAL_FUNC_0,    
+    DUAL_FUNC_1,    DUAL_FUNC_2,    KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_MS_BTN2,                                     KC_MS_BTN2,     KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    DUAL_FUNC_2,    DUAL_FUNC_1,    
+    KC_LEFT_CTRL,   OSL(8),         KC_MS_DBL_CLICK,KC_MS_BTN1,     KC_MS_WH_DOWN,  KC_MS_WH_RIGHT,                                 KC_MS_WH_RIGHT, KC_MS_WH_DOWN,  KC_MS_BTN1,     KC_MS_DBL_CLICK,OSL(8),         KC_LEFT_CTRL,   
     KC_AUDIO_VOL_UP,KC_AUDIO_VOL_DOWN,LGUI(LSFT(KC_S)),OSL(7),         OSL(6),         LT(4, KC_SPACE),                                LT(4, KC_SPACE),OSL(6),         OSL(7),         LGUI(LSFT(KC_S)),KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,
                                                     OSL(5),         MEH_T(KC_ESCAPE),                                MEH_T(KC_ESCAPE),OSL(5)
   ),
