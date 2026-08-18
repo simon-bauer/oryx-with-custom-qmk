@@ -953,7 +953,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case KC_MEDIA_STOP: 
     if(record->event.pressed) {
       layer_on(MAIN_LAYER);
-      defer_exec(MAIN_LAYER_TIMEOUT_MS, turn_main_layer_off_after_timeout, NULL)
+      defer_exec(MAIN_LAYER_TIMEOUT_MS, turn_main_layer_off_after_timeout, NULL);
     }
     return false; // handled
   case QK_MODS ... QK_MODS_MAX:
