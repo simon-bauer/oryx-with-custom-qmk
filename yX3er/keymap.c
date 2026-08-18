@@ -70,22 +70,22 @@ enum tap_dance_codes {
   DANCE_17,
 };
 
-#define DUAL_FUNC_0 LT(7, KC_B)
-#define DUAL_FUNC_1 LT(4, KC_M)
-#define DUAL_FUNC_2 LT(7, KC_F2)
-#define DUAL_FUNC_3 LT(12, KC_E)
-#define DUAL_FUNC_4 LT(1, KC_U)
-#define DUAL_FUNC_5 LT(8, KC_L)
-#define DUAL_FUNC_6 LT(4, KC_X)
-#define DUAL_FUNC_7 LT(1, KC_9)
-#define DUAL_FUNC_8 LT(7, KC_H)
-#define DUAL_FUNC_9 LT(4, KC_Y)
+#define DUAL_FUNC_0 LT(8, KC_W)
+#define DUAL_FUNC_1 LT(13, KC_9)
+#define DUAL_FUNC_2 LT(8, KC_E)
+#define DUAL_FUNC_3 LT(2, KC_I)
+#define DUAL_FUNC_4 LT(6, KC_U)
+#define DUAL_FUNC_5 LT(2, KC_F15)
+#define DUAL_FUNC_6 LT(8, KC_D)
+#define DUAL_FUNC_7 LT(7, KC_F23)
+#define DUAL_FUNC_8 LT(4, KC_F21)
+#define DUAL_FUNC_9 LT(9, KC_F4)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    DUAL_FUNC_0,    KC_Q,           KC_MS_ACCEL1,   KC_MS_UP,       KC_MS_WH_UP,    KC_MS_WH_LEFT,                                  KC_MS_WH_LEFT,  KC_MS_WH_UP,    KC_MS_UP,       KC_MS_ACCEL1,   KC_Z,           DUAL_FUNC_0,    
-    DUAL_FUNC_1,    DUAL_FUNC_2,    KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_MS_BTN2,                                     KC_MS_BTN2,     KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    DUAL_FUNC_2,    DUAL_FUNC_1,    
-    KC_LEFT_CTRL,   OSL(8),         KC_MS_DBL_CLICK,KC_MS_BTN1,     KC_MS_WH_DOWN,  KC_MS_WH_RIGHT,                                 KC_MS_WH_RIGHT, KC_MS_WH_DOWN,  KC_MS_BTN1,     KC_MS_DBL_CLICK,OSL(8),         KC_LEFT_CTRL,   
+    DUAL_FUNC_0,    KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_J,           KC_L,           KC_U,           KC_Y,           KC_Z,           DUAL_FUNC_0,    
+    DUAL_FUNC_1,    LT(9, KC_A),    LT(3, KC_R),    MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,                                           KC_M,           MT(MOD_LSFT, KC_N),MT(MOD_LCTL, KC_E),LT(3, KC_I),    LT(9, KC_O),    DUAL_FUNC_1,    
+    KC_LEFT_CTRL,   OSL(8),         MT(MOD_LALT, KC_X),KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       MT(MOD_LALT, KC_DOT),OSL(8),         KC_LEFT_CTRL,   
     KC_AUDIO_VOL_UP,KC_AUDIO_VOL_DOWN,LGUI(LSFT(KC_S)),OSL(7),         OSL(6),         LT(4, KC_SPACE),                                LT(4, KC_SPACE),OSL(6),         OSL(7),         LGUI(LSFT(KC_S)),KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,
                                                     OSL(5),         MEH_T(KC_ESCAPE),                                MEH_T(KC_ESCAPE),OSL(5)
   ),
@@ -97,11 +97,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_SPACE,       KC_ENTER,                                       KC_ENTER,       KC_SPACE
   ),
   [2] = LAYOUT_voyager(
-    DUAL_FUNC_0,    KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,                                           KC_J,           KC_L,           KC_U,           KC_Y,           KC_Z,           DUAL_FUNC_0,    
-    DUAL_FUNC_1,    LT(9, KC_A),    LT(3, KC_R),    MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,                                           KC_M,           MT(MOD_LSFT, KC_N),MT(MOD_LCTL, KC_E),LT(3, KC_I),    LT(9, KC_O),    DUAL_FUNC_1,    
-    KC_LEFT_CTRL,   OSL(8),         MT(MOD_LALT, KC_X),KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       MT(MOD_LALT, KC_DOT),OSL(8),         KC_LEFT_CTRL,   
-    KC_AUDIO_VOL_UP,KC_AUDIO_VOL_DOWN,LGUI(LSFT(KC_S)),OSL(7),         OSL(6),         LT(4, KC_SPACE),                                LT(4, KC_SPACE),OSL(6),         OSL(7),         LGUI(LSFT(KC_S)),KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,
-                                                    OSL(5),         MEH_T(KC_ESCAPE),                                MEH_T(KC_ESCAPE),OSL(5)
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_ACCEL1,   KC_MS_UP,       KC_MS_WH_UP,    KC_MS_WH_LEFT,                                  KC_MS_WH_LEFT,  KC_MS_WH_UP,    KC_MS_UP,       KC_MS_ACCEL1,   KC_Z,           KC_TRANSPARENT, 
+    KC_TRANSPARENT, DUAL_FUNC_2,    KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_MS_BTN2,                                     KC_MS_BTN2,     KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    DUAL_FUNC_2,    KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_DBL_CLICK,KC_MS_BTN1,     KC_MS_WH_DOWN,  KC_MS_WH_RIGHT,                                 KC_MS_WH_RIGHT, KC_MS_WH_DOWN,  KC_MS_BTN1,     KC_MS_DBL_CLICK,KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [3] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_9,           KC_8,           KC_7,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_7,           KC_8,           KC_9,           KC_TRANSPARENT, KC_TRANSPARENT, 
@@ -186,7 +186,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo3, CW_TOGG),
     COMBO(combo4, LCTL(KC_BSPC)),
     COMBO(combo5, TO(4)),
-    COMBO(combo6, TO(2)),
+    COMBO(combo6, TO(0)),
     COMBO(combo7, OSL(3)),
     COMBO(combo8, KC_MEDIA_STOP),
 };
@@ -206,7 +206,7 @@ void keyboard_post_init_user(void) {
 }
 
 const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
-    [0] = { {0,0,0}, {0,0,0}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {0,0,0}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {0,0,0}, {0,0,0}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {0,0,0}, {0,0,0}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {0,0,0}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
+    [2] = { {0,0,0}, {0,0,0}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {0,0,0}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {0,0,0}, {0,0,0}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {0,0,0}, {0,0,0}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {0,0,0}, {166,255,255}, {166,255,255}, {166,255,255}, {166,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
 
     [3] = { {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {131,255,255}, {131,255,255}, {131,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
 
@@ -238,8 +238,8 @@ bool rgb_matrix_indicators_user(void) {
   }
   if (!keyboard_config.disable_layer_led) { 
     switch (biton32(layer_state)) {
-      case 0:
-        set_layer_color(0);
+      case 2:
+        set_layer_color(2);
         break;
       case 3:
         set_layer_color(3);
@@ -1133,9 +1133,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DUAL_FUNC_1:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
-          layer_move(0);
+          layer_move(2);
         } else {
-          layer_move(0);
+          layer_move(2);
         }
       } else {
         if (record->event.pressed) {
