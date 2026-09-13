@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
+#include "timer.h"
 #define MOON_LED_LEVEL LED_LEVEL
 #ifndef ZSA_SAFE_RANGE
 #define ZSA_SAFE_RANGE SAFE_RANGE
@@ -10,6 +11,11 @@ enum custom_keycodes {
   ST_MACRO_0,
   ALT_ONESHOT,
 };
+
+static bool alt_oneshot_pending;
+static bool alt_oneshot_active;
+static uint16_t alt_oneshot_timer;
+static uint16_t alt_oneshot_keycode;
 
 enum tap_dance_codes {
   DANCE_0,
@@ -219,10 +225,29 @@ tap_dance_action_t tap_dance_actions[] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (alt_oneshot_pending && keycode != ALT_ONESHOT) {
+    if (record->event.pressed) {
+      alt_oneshot_pending = false;
+      alt_oneshot_active = true;
+      alt_oneshot_keycode = keycode;
+      register_code16(LALT(keycode));
+      return false;
+    }
+  }
+
+  if (alt_oneshot_active && keycode == alt_oneshot_keycode) {
+    if (!record->event.pressed) {
+      unregister_code16(LALT(keycode));
+      alt_oneshot_active = false;
+    }
+    return false;
+  }
+
   switch (keycode) {
   case ALT_ONESHOT:
     if (record->event.pressed) {
-      set_oneshot_mods(MOD_BIT(KC_LALT));
+      alt_oneshot_pending = true;
+      alt_oneshot_timer = timer_read();
     }
     return false;
   case QK_MODS ... QK_MODS_MAX:
@@ -344,4 +369,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
   }
   return true;
+}
+
+void matrix_scan_user(void) {
+  if (alt_oneshot_pending && timer_elapsed(alt_oneshot_timer) >= ONESHOT_TIMEOUT) {
+    alt_oneshot_pending = false;
+  }
 }
