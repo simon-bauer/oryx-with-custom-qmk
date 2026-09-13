@@ -126,8 +126,8 @@ const uint16_t PROGMEM combo18[] = { KC_M, MT(MOD_LSFT, KC_N), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, CW_TOGG),
-    COMBO(combo1, TO(0)),
-    COMBO(combo2, TO(0)),
+    COMBO(combo1, TO(1)),
+    COMBO(combo2, TO(1)),
     COMBO(combo3, TO(6)),
     COMBO(combo4, TO(6)),
     COMBO(combo5, TO(2)),

@@ -1,8 +1,6 @@
 #undef ONESHOT_TIMEOUT
 #define ONESHOT_TIMEOUT 5000
 
-#define TAP_CODE_DELAY 20
-
 #define PERMISSIVE_HOLD
 
 #define COMBO_TERM 20
