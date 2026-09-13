@@ -12,7 +12,6 @@ enum custom_keycodes {
   ALT_ONESHOT,
 };
 
-static bool alt_oneshot_pending;
 static bool alt_oneshot_active;
 static uint16_t alt_oneshot_timer;
 static uint16_t alt_oneshot_keycode;
@@ -227,10 +226,7 @@ tap_dance_action_t tap_dance_actions[] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (alt_oneshot_pending && record->event.pressed && keycode != ALT_ONESHOT) {
-    register_code(KC_LALT);
-    alt_oneshot_pending = false;
-    alt_oneshot_active = true;
+  if (alt_oneshot_active && record->event.pressed && keycode != ALT_ONESHOT) {
     alt_oneshot_keycode = keycode;
   }
 
@@ -242,7 +238,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case ALT_ONESHOT:
     if (record->event.pressed) {
-      alt_oneshot_pending = true;
+      register_code(KC_LALT);
+      alt_oneshot_active = true;
+      alt_oneshot_keycode = KC_NO;
       alt_oneshot_timer = timer_read();
     }
     return false;
@@ -368,7 +366,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 void matrix_scan_user(void) {
-  if (alt_oneshot_pending && timer_elapsed(alt_oneshot_timer) >= ONESHOT_TIMEOUT) {
-    alt_oneshot_pending = false;
+  if (alt_oneshot_active && timer_elapsed(alt_oneshot_timer) >= ONESHOT_TIMEOUT) {
+    unregister_code(KC_LALT);
+    alt_oneshot_active = false;
   }
 }
