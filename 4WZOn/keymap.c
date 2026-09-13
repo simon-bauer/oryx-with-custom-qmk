@@ -16,12 +16,12 @@ enum tap_dance_codes {
   DANCE_0,
 };
 
-#define DUAL_FUNC_0 LT(1, KC_4)
-#define DUAL_FUNC_1 LT(15, KC_F23)
-#define DUAL_FUNC_2 LT(11, KC_F6)
-#define DUAL_FUNC_3 LT(11, KC_L)
-#define DUAL_FUNC_4 LT(7, KC_L)
-#define DUAL_FUNC_5 LT(6, KC_F14)
+#define DUAL_FUNC_0 LT(13, KC_J)
+#define DUAL_FUNC_1 LT(1, KC_F19)
+#define DUAL_FUNC_2 LT(15, KC_F22)
+#define DUAL_FUNC_3 LT(8, KC_8)
+#define DUAL_FUNC_4 LT(11, KC_F18)
+#define DUAL_FUNC_5 LT(11, KC_2)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -29,11 +29,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,         KC_A,           KC_R,           KC_S,           KC_T,           KC_G,                                           KC_M,           KC_N,           KC_E,           KC_I,           KC_O,           KC_BSPC,        
     ST_MACRO_0,     OSL(2),         KC_X,           KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       KC_DOT,         OSL(2),         CW_TOGG,        
     KC_MS_BTN2,     KC_MS_DBL_CLICK,KC_MS_WH_UP,    KC_MS_WH_DOWN,  KC_MS_BTN1,     MO(1),                                          MEH_T(KC_SPACE),OSM(MOD_LCTL),  KC_TRANSPARENT, LALT(LGUI(KC_K)),KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,
-                                                    TD(DANCE_0),    DUAL_FUNC_0,                                    KC_LEFT_ALT,    OSM(MOD_LGUI)
+                                                    TD(DANCE_0),    DUAL_FUNC_0,                                    OSM(MOD_LALT),  OSM(MOD_LGUI)
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_PAGE_UP,     DUAL_FUNC_1,    KC_UP,          DUAL_FUNC_2,    KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, OSM(MOD_LGUI),  KC_LEFT_ALT,    OSM(MOD_LCTL),  OSM(MOD_LSFT),  KC_TRANSPARENT,                                 KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_APPLICATION, KC_TRANSPARENT, 
+    KC_TRANSPARENT, OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),  KC_TRANSPARENT,                                 KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_APPLICATION, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
