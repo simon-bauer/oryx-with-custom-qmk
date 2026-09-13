@@ -220,6 +220,35 @@ tap_dance_action_t tap_dance_actions[] = {
 };
 
 
+static bool alt_was_sticky = false;
+
+// 1. Intercept the exact moment the one-shot state changes
+void oneshot_mods_changed_user(uint8_t mods) {
+    // Check if one-shot Alt is being cleared (going from active to inactive)
+    if (!(mods & MOD_BIT(MOD_LALT)) && (get_oneshot_mods() & MOD_BIT(MOD_LALT))) {
+        alt_was_sticky = true;
+    }
+}
+
+// 2. Inject delays right around the report generation
+void pre_report_send_user(report_keyboard_t *report) {
+    if (alt_was_sticky) {
+        // We caught it right before the release report goes out!
+        // Inject a 30ms "waiting time" so the remote machine registers the combo
+        wait_ms(30); 
+    }
+}
+
+void post_report_send_user(report_keyboard_t *report) {
+    if (alt_was_sticky) {
+        // The release report has cleared the Alt key.
+        // Inject another small delay if needed to let RDP recover state.
+        wait_ms(10);
+        alt_was_sticky = false; // Reset our tracker
+    }
+}
+
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case QK_MODS ... QK_MODS_MAX:
