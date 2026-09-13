@@ -219,7 +219,17 @@ tap_dance_action_t tap_dance_actions[] = {
         [DANCE_0] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_0, dance_0_finished, dance_0_reset),
 };
 
+void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (keycode == OSM(MOD_LALT)) {
+    wait_ms(ONESHOT_ALT_DELAY_MS);
+  }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (keycode == OSM(MOD_LALT)) {
+    wait_ms(ONESHOT_ALT_DELAY_MS);
+  }
+
   switch (keycode) {
   case QK_MODS ... QK_MODS_MAX:
     // Mouse and consumer keys (volume, media) with modifiers work inconsistently across operating systems,
