@@ -9,8 +9,9 @@
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
   ST_MACRO_0,
-  ALT_ONESHOT,
 };
+
+#define ALT_TAP_HOLD MT(MOD_LALT, KC_NO)
 
 static bool alt_oneshot_pending;
 static bool alt_oneshot_active;
@@ -34,11 +35,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,         KC_A,           KC_R,           KC_S,           KC_T,           KC_G,                                           KC_M,           KC_N,           KC_E,           KC_I,           KC_O,           KC_BSPC,        
     ST_MACRO_0,     OSL(2),         KC_X,           KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       KC_DOT,         OSL(2),         CW_TOGG,        
     KC_MS_BTN2,     KC_MS_DBL_CLICK,KC_MS_WH_UP,    KC_MS_WH_DOWN,  KC_MS_BTN1,     MO(1),                                          MEH_T(KC_SPACE),OSM(MOD_LCTL),  KC_TRANSPARENT, LALT(LGUI(KC_K)),KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,
-                                                    TD(DANCE_0),    DUAL_FUNC_0,                                    ALT_ONESHOT,    OSM(MOD_LGUI)
+                                                    TD(DANCE_0),    DUAL_FUNC_0,                                    ALT_TAP_HOLD,   OSM(MOD_LGUI)
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_PAGE_UP,     DUAL_FUNC_1,    KC_UP,          DUAL_FUNC_2,    KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, OSM(MOD_LGUI),  ALT_ONESHOT,    OSM(MOD_LCTL),  OSM(MOD_LSFT),  KC_TRANSPARENT,                                 KC_PGDN,        KC_LEFT,        KC_DOWN,       KC_RIGHT,       KC_APPLICATION, KC_TRANSPARENT, 
+    KC_TRANSPARENT, OSM(MOD_LGUI),  ALT_TAP_HOLD,   OSM(MOD_LCTL),  OSM(MOD_LSFT),  KC_TRANSPARENT,                                 KC_PGDN,        KC_LEFT,        KC_DOWN,       KC_RIGHT,       KC_APPLICATION, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
@@ -225,7 +226,7 @@ tap_dance_action_t tap_dance_actions[] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (alt_oneshot_pending && keycode != ALT_ONESHOT) {
+  if (alt_oneshot_pending && keycode != ALT_TAP_HOLD) {
     if (record->event.pressed) {
       alt_oneshot_pending = false;
       alt_oneshot_active = true;
@@ -244,12 +245,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
 
   switch (keycode) {
-  case ALT_ONESHOT:
-    if (record->event.pressed) {
+  case ALT_TAP_HOLD:
+    if (!record->event.pressed && record->tap.count > 0) {
       alt_oneshot_pending = true;
       alt_oneshot_timer = timer_read();
+      return false;
     }
-    return false;
+    break;
   case QK_MODS ... QK_MODS_MAX:
     // Mouse and consumer keys (volume, media) with modifiers work inconsistently across operating systems,
     // this makes sure that modifiers are always applied to the key that was pressed.
