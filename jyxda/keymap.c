@@ -86,10 +86,19 @@ void keyboard_post_init_user(void) {
 
 static bool layer_1_timeout_pending = false;
 static uint16_t layer_1_started_at;
+static bool previous_num_lock_state;
+static bool num_lock_state_initialized;
 
 bool led_update_user(led_t led_state) {
-  (void)led_state;
-  if (biton32(layer_state) == 0) {
+  if (!num_lock_state_initialized) {
+    previous_num_lock_state = led_state.num_lock;
+    num_lock_state_initialized = true;
+    return true;
+  }
+
+  bool num_lock_changed = led_state.num_lock != previous_num_lock_state;
+  previous_num_lock_state = led_state.num_lock;
+  if (num_lock_changed && biton32(layer_state) == 0) {
     layer_on(1);
   }
   return true;
