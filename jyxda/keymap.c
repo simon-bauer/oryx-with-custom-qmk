@@ -230,10 +230,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (keycode >= QK_MODS && keycode <= QK_MODS_MAX) {
     mouse_keycode = QK_MODS_GET_BASIC_KEYCODE(keycode);
   }
-  if (record->event.pressed && biton32(layer_state) == 1 &&
-      (mouse_keycode == KC_MS_BTN1 || mouse_keycode == KC_MS_BTN2)) {
-    layer_1_started_at = timer_read();
-    layer_1_timeout_pending = true;
+  bool is_mouse_keycode = mouse_keycode == KC_MS_BTN1 || mouse_keycode == KC_MS_BTN2 ||
+                          mouse_keycode == KC_MS_WH_LEFT || mouse_keycode == KC_MS_WH_RIGHT ||
+                          mouse_keycode == KC_MS_WH_UP || mouse_keycode == KC_MS_WH_DOWN;
+  if (record->event.pressed && biton32(layer_state) == 1) {
+    if (is_mouse_keycode) {
+      if (mouse_keycode == KC_MS_BTN1 || mouse_keycode == KC_MS_BTN2) {
+        layer_1_started_at = timer_read();
+        layer_1_timeout_pending = true;
+      }
+    } else {
+      layer_off(1);
+      layer_1_timeout_pending = false;
+    }
   }
 
   switch (keycode) {
