@@ -88,8 +88,8 @@ static bool mouse_activity_detected = false;
 
 bool led_update_user(led_t led_state) {
   mouse_activity_detected = led_state.num_lock;
-  if (mouse_activity_detected) {
-    tap_code(KC_NUM);
+  if (mouse_activity_detected && biton32(layer_state) == 0) {
+    layer_on(1);
   }
   return true;
 }
