@@ -92,13 +92,11 @@ bool led_update_user(led_t led_state) {
   if (biton32(layer_state) == 0) {
     layer_on(1);
   }
-  layer_1_started_at = timer_read();
-  layer_1_timeout_pending = true;
   return true;
 }
 
 void matrix_scan_user(void) {
-  if (layer_1_timeout_pending && timer_elapsed(layer_1_started_at) >= 500) {
+  if (layer_1_timeout_pending && timer_elapsed(layer_1_started_at) >= 300) {
     layer_off(1);
     layer_1_timeout_pending = false;
   }
@@ -228,6 +226,16 @@ tap_dance_action_t tap_dance_actions[] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  uint16_t mouse_keycode = keycode;
+  if (keycode >= QK_MODS && keycode <= QK_MODS_MAX) {
+    mouse_keycode = QK_MODS_GET_BASIC_KEYCODE(keycode);
+  }
+  if (record->event.pressed && biton32(layer_state) == 1 &&
+      (mouse_keycode == KC_MS_BTN1 || mouse_keycode == KC_MS_BTN2)) {
+    layer_1_started_at = timer_read();
+    layer_1_timeout_pending = true;
+  }
+
   switch (keycode) {
   case QK_MODS ... QK_MODS_MAX:
     // Mouse and consumer keys (volume, media) with modifiers work inconsistently across operating systems,
