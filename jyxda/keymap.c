@@ -84,25 +84,16 @@ void keyboard_post_init_user(void) {
   rgb_matrix_enable();
 }
 
-static bool mouse_activity_detected = false;
 static bool layer_1_timeout_pending = false;
-static bool num_lock_reset_pending = false;
 static uint16_t layer_1_started_at;
 
 bool led_update_user(led_t led_state) {
-  bool was_on = mouse_activity_detected;
-  mouse_activity_detected = led_state.num_lock;
-  if (num_lock_reset_pending) {
-    if (!mouse_activity_detected) {
-      num_lock_reset_pending = false;
-    }
-    return true;
-  }
-  if (mouse_activity_detected && !was_on && biton32(layer_state) == 0) {
+  (void)led_state;
+  if (biton32(layer_state) == 0) {
     layer_on(1);
-    layer_1_started_at = timer_read();
-    layer_1_timeout_pending = true;
   }
+  layer_1_started_at = timer_read();
+  layer_1_timeout_pending = true;
   return true;
 }
 
@@ -110,10 +101,6 @@ void matrix_scan_user(void) {
   if (layer_1_timeout_pending && timer_elapsed(layer_1_started_at) >= 500) {
     layer_off(1);
     layer_1_timeout_pending = false;
-    if (mouse_activity_detected) {
-      num_lock_reset_pending = true;
-      tap_code(KC_NUM);
-    }
   }
 }
 
