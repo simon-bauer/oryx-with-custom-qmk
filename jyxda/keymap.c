@@ -129,7 +129,7 @@ void matrix_scan_user(void) {
     layer_1_timeout_pending = false;
     layer_1_long_timeout_pending = false;
   }
-  if (layer_1_long_timeout_pending && timer_elapsed(layer_1_long_started_at) >= 4000) {
+  if (layer_1_long_timeout_pending && timer_elapsed(layer_1_long_started_at) >= 2000) {
     layer_off(1);
     layer_1_long_timeout_pending = false;
     layer_1_timeout_pending = false;
