@@ -267,7 +267,10 @@ tap_dance_action_t tap_dance_actions[] = {
 };
 
 bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
-  return IS_RETRO(keycode);
+  uint8_t tap_keycode = keycode & 0xFF;
+  return IS_RETRO(keycode) &&
+         (tap_keycode == KC_A || tap_keycode == KC_R || tap_keycode == KC_S || tap_keycode == KC_T ||
+          tap_keycode == KC_N || tap_keycode == KC_E || tap_keycode == KC_I || tap_keycode == KC_O);
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
