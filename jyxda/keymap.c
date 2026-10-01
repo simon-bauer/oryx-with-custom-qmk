@@ -106,6 +106,8 @@ void keyboard_post_init_user(void) {
 
 static bool layer_1_timeout_pending = false;
 static uint16_t layer_1_started_at;
+static bool layer_1_long_timeout_pending = false;
+static uint16_t layer_1_long_started_at;
 static bool previous_num_lock_state;
 static bool num_lock_state_initialized;
 
@@ -120,6 +122,8 @@ bool led_update_user(led_t led_state) {
   previous_num_lock_state = led_state.num_lock;
   if (num_lock_changed && biton32(layer_state) == 0) {
     layer_on(1);
+    layer_1_long_started_at = timer_read();
+    layer_1_long_timeout_pending = true;
   }
   return true;
 }
@@ -127,6 +131,12 @@ bool led_update_user(led_t led_state) {
 void matrix_scan_user(void) {
   if (layer_1_timeout_pending && timer_elapsed(layer_1_started_at) >= 350) {
     layer_off(1);
+    layer_1_timeout_pending = false;
+    layer_1_long_timeout_pending = false;
+  }
+  if (layer_1_long_timeout_pending && timer_elapsed(layer_1_long_started_at) >= 4000) {
+    layer_off(1);
+    layer_1_long_timeout_pending = false;
     layer_1_timeout_pending = false;
   }
 }
@@ -273,9 +283,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_1_started_at = timer_read();
         layer_1_timeout_pending = true;
       }
+      if (mouse_keycode == KC_MS_WH_LEFT || mouse_keycode == KC_MS_WH_RIGHT ||
+          mouse_keycode == KC_MS_WH_UP || mouse_keycode == KC_MS_WH_DOWN) {
+        layer_1_long_started_at = timer_read();
+        layer_1_long_timeout_pending = true;
+      }
     } else {
       layer_off(1);
       layer_1_timeout_pending = false;
+      layer_1_long_timeout_pending = false;
     }
   }
 
