@@ -268,6 +268,10 @@ tap_dance_action_t tap_dance_actions[] = {
         [DANCE_0] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_0, dance_0_finished, dance_0_reset),
 };
 
+bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
+  return IS_RETRO(keycode);
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   uint16_t mouse_keycode = keycode;
   if (keycode >= QK_MODS && keycode <= QK_MODS_MAX) {
