@@ -107,8 +107,6 @@ static bool layer_1_timeout_pending = false;
 static uint16_t layer_1_started_at;
 static bool layer_1_long_timeout_pending = false;
 static uint16_t layer_1_long_started_at;
-static bool layer_1_exit_f_held = false;
-static bool layer_1_exit_u_held = false;
 static bool previous_num_lock_state;
 static bool num_lock_state_initialized;
 
@@ -285,31 +283,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   bool is_mouse_keycode = mouse_keycode == KC_MS_BTN1 || mouse_keycode == KC_MS_BTN2 ||
                           mouse_keycode == KC_MS_WH_LEFT || mouse_keycode == KC_MS_WH_RIGHT ||
                           mouse_keycode == KC_MS_WH_UP || mouse_keycode == KC_MS_WH_DOWN;
-  bool is_layer_1_exit_key = mouse_keycode == KC_F || mouse_keycode == KC_U;
-  if (record->event.pressed && is_layer_1_exit_key &&
-      (biton32(layer_state) == 1 || layer_1_exit_f_held || layer_1_exit_u_held)) {
-    if (mouse_keycode == KC_F) {
-      layer_1_exit_f_held = true;
-    } else {
-      layer_1_exit_u_held = true;
-    }
-    if (biton32(layer_state) == 1) {
-      layer_off(1);
-      layer_1_timeout_pending = false;
-      layer_1_long_timeout_pending = false;
-    }
-    return false;
-  }
-  if (!record->event.pressed && is_layer_1_exit_key) {
-    if (mouse_keycode == KC_F && layer_1_exit_f_held) {
-      layer_1_exit_f_held = false;
-      return false;
-    }
-    if (mouse_keycode == KC_U && layer_1_exit_u_held) {
-      layer_1_exit_u_held = false;
-      return false;
-    }
-  }
   if (record->event.pressed && biton32(layer_state) == 1) {
     if (is_mouse_keycode) {
       if (mouse_keycode == KC_MS_BTN1 || mouse_keycode == KC_MS_BTN2) {
