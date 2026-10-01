@@ -125,7 +125,7 @@ bool led_update_user(led_t led_state) {
 }
 
 void matrix_scan_user(void) {
-  if (layer_1_timeout_pending && timer_elapsed(layer_1_started_at) >= 300) {
+  if (layer_1_timeout_pending && timer_elapsed(layer_1_started_at) >= 350) {
     layer_off(1);
     layer_1_timeout_pending = false;
   }
