@@ -20,7 +20,6 @@
 #define LAYER_STATE_8BIT
 #define COMBO_COUNT 2
 
-#define IS_RETRO
 #define RETRO_SHIFT 500
 
 #define RGB_MATRIX_STARTUP_SPD 60
