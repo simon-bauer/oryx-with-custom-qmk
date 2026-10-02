@@ -300,7 +300,8 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
   uint8_t tap_keycode = keycode & 0xFF;
   return IS_RETRO(keycode) &&
          (tap_keycode == KC_A || tap_keycode == KC_R || tap_keycode == KC_S || tap_keycode == KC_T ||
-          tap_keycode == KC_N || tap_keycode == KC_E || tap_keycode == KC_I || tap_keycode == KC_O);
+          tap_keycode == KC_N || tap_keycode == KC_E || tap_keycode == KC_I || tap_keycode == KC_O ||
+          tap_keycode == KC_X);
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
