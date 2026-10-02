@@ -110,6 +110,7 @@ jobs:
           
           # Build the layout
           docker run -v ./qmk_firmware:/root -v ./:/workspace --rm qmk /bin/sh -c "
+            set -e
             qmk setup zsa/qmk_firmware -b firmware${{ steps.download-layout-source.outputs.firmware_version }} -y
             git apply --check --directory=modules/zsa/oryx /workspace/oryx-raw-hid-hook.patch
             git apply --directory=modules/zsa/oryx /workspace/oryx-raw-hid-hook.patch

@@ -11,11 +11,3 @@ diff --git a/oryx.c b/oryx.c
 +    raw_hid_receive_oryx_user(data, length);
  
      switch (command) {
-+void raw_hid_receive_oryx_user(uint8_t *data, uint8_t length);
-+
-+void raw_hid_receive(uint8_t *data, uint8_t length) {
-     uint8_t  command = data[0];
-     uint8_t *param   = &data[1];
-+    raw_hid_receive_oryx_user(data, length);
- 
-     switch (command) {
