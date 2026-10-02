@@ -110,7 +110,7 @@ static bool layer_1_long_timeout_pending = false;
 static uint16_t layer_1_long_started_at;
 
 void raw_hid_receive_oryx_user(uint8_t *data, uint8_t length) {
-  if (length > 0 && (data[0] & 1) && biton32(layer_state) == 0) {
+  if (length > 0 && (data[1] & 1) && biton32(layer_state) == 0) {
     layer_on(1);
     layer_1_long_started_at = timer_read();
     layer_1_long_timeout_pending = true;
