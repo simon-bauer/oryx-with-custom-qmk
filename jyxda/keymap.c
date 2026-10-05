@@ -29,20 +29,20 @@ enum tap_dance_codes {
   DANCE_1,
 };
 
-#define DUAL_FUNC_0 LT(10, KC_F4)
-#define DUAL_FUNC_1 LT(15, KC_6)
-#define DUAL_FUNC_2 LT(5, KC_4)
-#define DUAL_FUNC_3 LT(11, KC_5)
-#define DUAL_FUNC_4 LT(4, KC_Y)
-#define DUAL_FUNC_5 LT(13, KC_C)
-#define DUAL_FUNC_6 LT(8, KC_1)
-#define DUAL_FUNC_7 LT(11, KC_F19)
-#define DUAL_FUNC_8 LT(14, KC_9)
-#define DUAL_FUNC_9 LT(7, KC_F11)
-#define DUAL_FUNC_10 LT(14, KC_S)
-#define DUAL_FUNC_11 LT(10, KC_2)
-#define DUAL_FUNC_12 LT(5, KC_F10)
-#define DUAL_FUNC_13 LT(8, KC_P)
+#define DUAL_FUNC_0 LT(1, KC_F18)
+#define DUAL_FUNC_1 LT(11, KC_F18)
+#define DUAL_FUNC_2 LT(13, KC_Q)
+#define DUAL_FUNC_3 LT(13, KC_F9)
+#define DUAL_FUNC_4 LT(7, KC_4)
+#define DUAL_FUNC_5 LT(7, KC_P)
+#define DUAL_FUNC_6 LT(8, KC_L)
+#define DUAL_FUNC_7 LT(10, KC_F15)
+#define DUAL_FUNC_8 LT(3, KC_V)
+#define DUAL_FUNC_9 LT(9, KC_F18)
+#define DUAL_FUNC_10 LT(14, KC_F11)
+#define DUAL_FUNC_11 LT(2, KC_4)
+#define DUAL_FUNC_12 LT(11, KC_Q)
+#define DUAL_FUNC_13 LT(3, KC_L)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_HOME,        LSFT(KC_HOME),                                  LSFT(KC_END),   KC_END
   ),
   [4] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NUM,         
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, QK_LLCK,                                        QK_LLCK,        ST_MACRO_1,     ST_MACRO_2,     ST_MACRO_3,     ST_MACRO_4,     KC_TRANSPARENT, 
     KC_TRANSPARENT, RGB_VAI,        RGB_HUI,        RGB_SPI,        RGB_MODE_FORWARD,KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_5,     ST_MACRO_6,     ST_MACRO_7,     ST_MACRO_8,     KC_TRANSPARENT, 
     KC_TRANSPARENT, RGB_VAD,        RGB_HUD,        RGB_SPD,        RGB_TOG,        KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_9,     ST_MACRO_10,    ST_MACRO_11,    ST_MACRO_12,    KC_TRANSPARENT, 
