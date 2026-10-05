@@ -130,7 +130,7 @@ void raw_hid_receive_oryx_user(uint8_t *data, uint8_t length) {
 }
 
 void matrix_scan_user(void) {
-  if (layer_1_timeout_pending && timer_elapsed(layer_1_started_at) >= 350) {
+  if (layer_1_timeout_pending && timer_elapsed(layer_1_started_at) >= 300) {
     layer_off(1);
     layer_1_timeout_pending = false;
     layer_1_long_timeout_pending = false;
