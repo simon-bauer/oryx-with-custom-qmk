@@ -120,6 +120,8 @@ static bool layer_1_timeout_pending = false;
 static uint16_t layer_1_started_at;
 static bool layer_1_long_timeout_pending = false;
 static uint16_t layer_1_long_started_at;
+static bool layer_1_swallow_b_release = false;
+static bool layer_1_swallow_j_release = false;
 
 void raw_hid_receive_oryx_user(uint8_t *data, uint8_t length) {
   if (length > 0 && (data[0] & 1) && biton32(layer_state) == 0) {
@@ -317,6 +319,17 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (!record->event.pressed) {
+    if (keycode == KC_B && layer_1_swallow_b_release) {
+      layer_1_swallow_b_release = false;
+      return false;
+    }
+    if (keycode == KC_J && layer_1_swallow_j_release) {
+      layer_1_swallow_j_release = false;
+      return false;
+    }
+  }
+
   uint16_t mouse_keycode = keycode;
   if (keycode >= QK_MODS && keycode <= QK_MODS_MAX) {
     mouse_keycode = QK_MODS_GET_BASIC_KEYCODE(keycode);
@@ -325,7 +338,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                           mouse_keycode == KC_MS_WH_LEFT || mouse_keycode == KC_MS_WH_RIGHT ||
                           mouse_keycode == KC_MS_WH_UP || mouse_keycode == KC_MS_WH_DOWN;
   if (record->event.pressed && biton32(layer_state) == 1) {
-    if (is_mouse_keycode) {
+    if (keycode == KC_B || keycode == KC_J) {
+      layer_1_timeout_pending = false;
+      layer_1_long_timeout_pending = false;
+      if (keycode == KC_B) {
+        layer_1_swallow_b_release = true;
+      } else {
+        layer_1_swallow_j_release = true;
+      }
+      return false;
+    } else if (is_mouse_keycode) {
       if (mouse_keycode == KC_MS_BTN1 || mouse_keycode == KC_MS_BTN2) {
         layer_1_started_at = timer_read();
         layer_1_timeout_pending = true;
