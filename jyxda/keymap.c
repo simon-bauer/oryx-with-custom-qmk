@@ -120,27 +120,31 @@ static bool layer_1_timeout_pending = false;
 static uint16_t layer_1_started_at;
 static bool layer_1_long_timeout_pending = false;
 static uint16_t layer_1_long_started_at;
+static bool layer_1_locked = false;
 static bool layer_1_swallow_b_release = false;
 static bool layer_1_swallow_j_release = false;
 
 void raw_hid_receive_oryx_user(uint8_t *data, uint8_t length) {
   if (length > 0 && (data[0] & 1) && biton32(layer_state) == 0) {
     layer_on(1);
+    layer_1_locked = false;
     layer_1_long_started_at = timer_read();
     layer_1_long_timeout_pending = true;
   }
 }
 
 void matrix_scan_user(void) {
-  if (layer_1_timeout_pending && timer_elapsed(layer_1_started_at) >= 300) {
+  if (!layer_1_locked && layer_1_timeout_pending && timer_elapsed(layer_1_started_at) >= 300) {
     layer_off(1);
     layer_1_timeout_pending = false;
     layer_1_long_timeout_pending = false;
+    layer_1_locked = false;
   }
-  if (layer_1_long_timeout_pending && timer_elapsed(layer_1_long_started_at) >= 5000) {
+  if (!layer_1_locked && layer_1_long_timeout_pending && timer_elapsed(layer_1_long_started_at) >= 5000) {
     layer_off(1);
     layer_1_long_timeout_pending = false;
     layer_1_timeout_pending = false;
+    layer_1_locked = false;
   }
 }
 
@@ -339,6 +343,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                           mouse_keycode == KC_MS_WH_UP || mouse_keycode == KC_MS_WH_DOWN;
   if (record->event.pressed && biton32(layer_state) == 1) {
     if (keycode == KC_B || keycode == KC_J) {
+      if (layer_1_locked) {
+        layer_off(1);
+        layer_1_locked = false;
+      } else {
+        layer_1_locked = true;
+      }
       layer_1_timeout_pending = false;
       layer_1_long_timeout_pending = false;
       if (keycode == KC_B) {
@@ -347,7 +357,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_1_swallow_j_release = true;
       }
       return false;
-    } else if (is_mouse_keycode) {
+    } else if (!layer_1_locked && is_mouse_keycode) {
       if (mouse_keycode == KC_MS_BTN1 || mouse_keycode == KC_MS_BTN2) {
         layer_1_started_at = timer_read();
         layer_1_timeout_pending = true;
@@ -357,10 +367,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_1_long_started_at = timer_read();
         layer_1_long_timeout_pending = true;
       }
-    } else {
+    } else if (!layer_1_locked) {
       layer_off(1);
       layer_1_timeout_pending = false;
       layer_1_long_timeout_pending = false;
+      layer_1_locked = false;
     }
   }
 
