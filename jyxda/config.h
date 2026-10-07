@@ -1,7 +1,9 @@
-#define FLOW_TAP_TERM 150
+#define FLOW_TAP_TERM 100
 #define CHORDAL_HOLD
 #undef ONESHOT_TIMEOUT
 #define ONESHOT_TIMEOUT 2000
+
+#define PERMISSIVE_HOLD
 
 #define COMBO_TERM 17
 
@@ -13,9 +15,8 @@
 #define MOUSEKEY_INTERVAL 17
 
 #define AUTO_SHIFT_MODIFIERS
-#define HOLD_ON_OTHER_KEY_PRESS
 #define USB_POLLING_INTERVAL_MS 10
-#define SERIAL_NUMBER "jyxda/bvjQYg"
+#define SERIAL_NUMBER "jyxda/yoAbzB"
 #define LAYER_STATE_8BIT
 #define COMBO_COUNT 4
 
