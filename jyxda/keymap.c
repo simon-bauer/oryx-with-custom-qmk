@@ -297,19 +297,6 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  uint16_t mouse_keycode = keycode;
-  if (keycode >= QK_MODS && keycode <= QK_MODS_MAX) {
-    mouse_keycode = QK_MODS_GET_BASIC_KEYCODE(keycode);
-  }
-  bool is_mouse_keycode = mouse_keycode == KC_MS_BTN1 || mouse_keycode == KC_MS_BTN2 ||
-                          mouse_keycode == KC_MS_WH_LEFT || mouse_keycode == KC_MS_WH_RIGHT ||
-                          mouse_keycode == KC_MS_WH_UP || mouse_keycode == KC_MS_WH_DOWN;
-  if (record->event.pressed && biton32(layer_state) == 1) {
-    if (!is_mouse_keycode) {
-      layer_off(1);
-    }
-  }
-
   switch (keycode) {
   case QK_MODS ... QK_MODS_MAX:
     // Mouse and consumer keys (volume, media) with modifiers work inconsistently across operating systems,
