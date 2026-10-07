@@ -116,29 +116,9 @@ void keyboard_post_init_user(void) {
   rgb_matrix_enable();
 }
 
-static bool layer_1_timeout_pending = false;
-static uint16_t layer_1_started_at;
-static bool layer_1_long_timeout_pending = false;
-static uint16_t layer_1_long_started_at;
-
 void raw_hid_receive_oryx_user(uint8_t *data, uint8_t length) {
   if (length > 0 && (data[0] & 1) && biton32(layer_state) == 0) {
     layer_on(1);
-    layer_1_long_started_at = timer_read();
-    layer_1_long_timeout_pending = true;
-  }
-}
-
-void matrix_scan_user(void) {
-  if (layer_1_timeout_pending && timer_elapsed(layer_1_started_at) >= 300) {
-    layer_off(1);
-    layer_1_timeout_pending = false;
-    layer_1_long_timeout_pending = false;
-  }
-  if (layer_1_long_timeout_pending && timer_elapsed(layer_1_long_started_at) >= 1500) {
-    layer_off(1);
-    layer_1_long_timeout_pending = false;
-    layer_1_timeout_pending = false;
   }
 }
 
@@ -325,20 +305,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                           mouse_keycode == KC_MS_WH_LEFT || mouse_keycode == KC_MS_WH_RIGHT ||
                           mouse_keycode == KC_MS_WH_UP || mouse_keycode == KC_MS_WH_DOWN;
   if (record->event.pressed && biton32(layer_state) == 1) {
-    if (is_mouse_keycode) {
-      if (mouse_keycode == KC_MS_BTN1 || mouse_keycode == KC_MS_BTN2) {
-        layer_1_started_at = timer_read();
-        layer_1_timeout_pending = true;
-      }
-      if (mouse_keycode == KC_MS_WH_LEFT || mouse_keycode == KC_MS_WH_RIGHT ||
-          mouse_keycode == KC_MS_WH_UP || mouse_keycode == KC_MS_WH_DOWN) {
-        layer_1_long_started_at = timer_read();
-        layer_1_long_timeout_pending = true;
-      }
-    } else {
+    if (!is_mouse_keycode) {
       layer_off(1);
-      layer_1_timeout_pending = false;
-      layer_1_long_timeout_pending = false;
     }
   }
 
