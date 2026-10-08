@@ -298,6 +298,11 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (record->event.pressed && (layer_state & (1UL << 1)) &&
+      keycode != KC_MS_BTN1 && keycode != KC_MS_BTN2) {
+    layer_off(1);
+  }
+
   switch (keycode) {
   case QK_MODS ... QK_MODS_MAX:
     // Mouse and consumer keys (volume, media) with modifiers work inconsistently across operating systems,
