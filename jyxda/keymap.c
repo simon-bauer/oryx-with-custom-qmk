@@ -298,15 +298,8 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  bool is_mouse_click = keycode == KC_MS_BTN1 || keycode == KC_MS_BTN2;
-  if (keycode >= QK_MODS && keycode <= QK_MODS_MAX) {
-    uint8_t mods = QK_MODS_GET_MODS(keycode);
-    uint16_t basic_keycode = QK_MODS_GET_BASIC_KEYCODE(keycode);
-    is_mouse_click = (basic_keycode == KC_MS_BTN1 || basic_keycode == KC_MS_BTN2) &&
-                     (mods & ~(MOD_MASK_SHIFT | MOD_MASK_CTRL)) == 0;
-  }
-
-  if (record->event.pressed && (layer_state & (1UL << 1)) && !is_mouse_click) {
+  if (record->event.pressed && (layer_state & (1UL << 1)) &&
+      keycode != KC_MS_BTN1 && keycode != KC_MS_BTN2) {
     layer_off(1);
   }
 
