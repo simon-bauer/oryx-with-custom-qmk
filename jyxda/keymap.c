@@ -264,7 +264,7 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
          (tap_keycode == KC_A || tap_keycode == KC_R || tap_keycode == KC_S || tap_keycode == KC_T ||
           tap_keycode == KC_N || tap_keycode == KC_E || tap_keycode == KC_I || tap_keycode == KC_O ||
           tap_keycode == KC_X || tap_keycode == KC_G || tap_keycode == KC_M || tap_keycode == KC_Z ||
-          tap_keycode == KC_SLASH);
+          tap_keycode == KC_DOT || tap_keycode == KC_SLASH);
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
