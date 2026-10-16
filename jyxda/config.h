@@ -18,9 +18,9 @@
 #define AUTO_SHIFT_MODIFIERS
 #define AUTO_SHIFT_TIMEOUT 185
 #define USB_POLLING_INTERVAL_MS 10
-#define SERIAL_NUMBER "jyxda/AzRlMZ"
+#define SERIAL_NUMBER "jyxda/rbaMLl"
 #define LAYER_STATE_8BIT
-#define COMBO_COUNT 9
+#define COMBO_COUNT 12
 
 #define RETRO_SHIFT 1000
 
