@@ -198,15 +198,15 @@ bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (record->event.pressed && (layer_state & (1UL << 1)) &&
-      keycode != KC_MS_BTN1 && keycode != KC_MS_BTN2 &&
-      keycode != KC_MS_WH_LEFT && keycode != KC_MS_WH_RIGHT &&
-      keycode != KC_MS_WH_UP && keycode != KC_MS_WH_DOWN &&
-      keycode != KC_MS_DBL_CLICK &&
-      keycode != KC_LEFT_SHIFT && keycode != KC_LEFT_CTRL &&
-      keycode != KC_LEFT_ALT && keycode != KC_LEFT_GUI) {
-    layer_off(1);
-  }
+  // if (record->event.pressed && (layer_state & (1UL << 1)) &&
+  //     keycode != KC_MS_BTN1 && keycode != KC_MS_BTN2 &&
+  //     keycode != KC_MS_WH_LEFT && keycode != KC_MS_WH_RIGHT &&
+  //     keycode != KC_MS_WH_UP && keycode != KC_MS_WH_DOWN &&
+  //     keycode != KC_MS_DBL_CLICK &&
+  //     keycode != KC_LEFT_SHIFT && keycode != KC_LEFT_CTRL &&
+  //     keycode != KC_LEFT_ALT && keycode != KC_LEFT_GUI) {
+  //   layer_off(1);
+  // }
 
   switch (keycode) {
   case QK_MODS ... QK_MODS_MAX:
