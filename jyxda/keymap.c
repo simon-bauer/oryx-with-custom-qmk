@@ -25,23 +25,23 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(8, KC_H)
-#define DUAL_FUNC_1 LT(15, KC_E)
-#define DUAL_FUNC_2 LT(9, KC_1)
-#define DUAL_FUNC_3 LT(4, KC_F24)
-#define DUAL_FUNC_4 LT(8, KC_S)
-#define DUAL_FUNC_5 LT(6, KC_V)
-#define DUAL_FUNC_6 LT(11, KC_P)
-#define DUAL_FUNC_7 LT(8, KC_O)
-#define DUAL_FUNC_8 LT(10, KC_0)
-#define DUAL_FUNC_9 LT(1, KC_9)
-#define DUAL_FUNC_10 LT(10, KC_F6)
-#define DUAL_FUNC_11 LT(2, KC_P)
-#define DUAL_FUNC_12 LT(3, KC_F7)
-#define DUAL_FUNC_13 LT(14, KC_F20)
-#define DUAL_FUNC_14 LT(7, KC_F20)
-#define DUAL_FUNC_15 LT(6, KC_5)
-#define DUAL_FUNC_16 LT(13, KC_E)
+#define DUAL_FUNC_0 LT(1, KC_F6)
+#define DUAL_FUNC_1 LT(3, KC_F11)
+#define DUAL_FUNC_2 LT(6, KC_F20)
+#define DUAL_FUNC_3 LT(14, KC_F)
+#define DUAL_FUNC_4 LT(11, KC_F13)
+#define DUAL_FUNC_5 LT(7, KC_F21)
+#define DUAL_FUNC_6 LT(4, KC_X)
+#define DUAL_FUNC_7 LT(5, KC_S)
+#define DUAL_FUNC_8 LT(1, KC_Q)
+#define DUAL_FUNC_9 LT(5, KC_E)
+#define DUAL_FUNC_10 LT(6, KC_F12)
+#define DUAL_FUNC_11 LT(12, KC_1)
+#define DUAL_FUNC_12 LT(6, KC_5)
+#define DUAL_FUNC_13 LT(7, KC_2)
+#define DUAL_FUNC_14 LT(1, KC_F11)
+#define DUAL_FUNC_15 LT(5, KC_J)
+#define DUAL_FUNC_16 LT(2, KC_I)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     LT(3, KC_TAB),  LALT(LGUI(KC_K)),                                KC_BSPC,        LT(4, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 TO(0),          TO(0),          TO(0),          TO(0),          TO(0),          TO(0),          
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, DUAL_FUNC_12,   KC_MS_DBL_CLICK,LGUI(LSFT(KC_S)),KC_TRANSPARENT,                                 TO(0),          TO(0),          TO(0),          TO(0),          TO(0),          KC_TRANSPARENT, 
     MT(MOD_LSFT, KC_ENTER),KC_TRANSPARENT, KC_MS_WH_UP,    KC_MS_WH_DOWN,  KC_MS_BTN1,     KC_MS_BTN2,                                     TO(0),          TO(0),          TO(0),          TO(0),          TO(0),          TO(0),          
     MT(MOD_LCTL, KC_ESCAPE),DUAL_FUNC_13,   DUAL_FUNC_14,   LCTL(KC_C),     LCTL(KC_V),     LGUI(KC_V),                                     TO(0),          TO(0),          TO(0),          TO(0),          TO(0),          TO(0),          
